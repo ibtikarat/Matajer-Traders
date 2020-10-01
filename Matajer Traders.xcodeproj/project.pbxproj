@@ -3,29 +3,137 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833FEF06251AE47600859EFE /* ReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF05251AE47600859EFE /* ReportsVC.swift */; };
+		833FEF09251AE4AD00859EFE /* MarketingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF08251AE4AD00859EFE /* MarketingVC.swift */; };
+		833FEF0B251AE4D000859EFE /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF0A251AE4CF00859EFE /* ContactVC.swift */; };
+		833FEF0D251AE4DF00859EFE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF0C251AE4DF00859EFE /* ProfileVC.swift */; };
+		833FEF0F251AE50F00859EFE /* ServicesClientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF0E251AE50F00859EFE /* ServicesClientsVC.swift */; };
+		833FEF11251AE54400859EFE /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF10251AE54400859EFE /* MoreVC.swift */; };
+		833FEF13251B022A00859EFE /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF12251B022A00859EFE /* TermsVC.swift */; };
+		833FEF15251B023B00859EFE /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF14251B023B00859EFE /* PrivacyVC.swift */; };
+		834FAC832511EBC7001AE1EA /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834FAC822511EBC7001AE1EA /* Registration.storyboard */; };
+		834FAC852511F34D001AE1EA /* IntroductionScreensVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FAC842511F34D001AE1EA /* IntroductionScreensVC.swift */; };
+		834FAC8725123C47001AE1EA /* Register2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834FAC8625123C47001AE1EA /* Register2VC.swift */; };
+		835CEDFC252097CD001226E5 /* custom_sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 831E1638251CA1C40059D6E3 /* custom_sound.caf */; };
+		83634715250F8C7C00CF2317 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634712250F8C7B00CF2317 /* MainTabBar.swift */; };
+		83634716250F8C7C00CF2317 /* NoInternetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634713250F8C7B00CF2317 /* NoInternetVC.swift */; };
+		83634717250F8C7C00CF2317 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634714250F8C7B00CF2317 /* LaunchScreenVC.swift */; };
+		83634724250F8C9000CF2317 /* ForegetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363471C250F8C9000CF2317 /* ForegetPwdVC.swift */; };
+		83634725250F8C9000CF2317 /* ResetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363471D250F8C9000CF2317 /* ResetPwdVC.swift */; };
+		83634726250F8C9000CF2317 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363471F250F8C9000CF2317 /* RegisterVC.swift */; };
+		83634727250F8C9000CF2317 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634720250F8C9000CF2317 /* LoginVC.swift */; };
 		8367E570250F36E40091A538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E56F250F36E40091A538 /* AppDelegate.swift */; };
 		8367E572250F36E40091A538 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E571250F36E40091A538 /* SceneDelegate.swift */; };
-		8367E574250F36E40091A538 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E573250F36E40091A538 /* ViewController.swift */; };
 		8367E577250F36E40091A538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8367E575250F36E40091A538 /* Main.storyboard */; };
 		8367E57A250F36E50091A538 /* Matajer_Traders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8367E578250F36E50091A538 /* Matajer_Traders.xcdatamodeld */; };
 		8367E57C250F36E70091A538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8367E57B250F36E70091A538 /* Assets.xcassets */; };
 		8367E57F250F36E70091A538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8367E57D250F36E70091A538 /* LaunchScreen.storyboard */; };
+		8367E5BA250F46D10091A538 /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E588250F46D00091A538 /* Constatns.swift */; };
+		8367E5C3250F46D10091A538 /* StatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E595250F46D00091A538 /* StatusResult.swift */; };
+		8367E5C4250F46D10091A538 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E596250F46D00091A538 /* API.swift */; };
+		8367E5CF250F46D10091A538 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5A2250F46D00091A538 /* User.swift */; };
+		8367E5D9250F46D10091A538 /* NavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5AD250F46D00091A538 /* NavigationControllerExtention.swift */; };
+		8367E5DA250F46D10091A538 /* LinePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5AE250F46D00091A538 /* LinePageControl.swift */; };
+		8367E5DB250F46D10091A538 /* ViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5AF250F46D00091A538 /* ViewControllerExtention.swift */; };
+		8367E5DC250F46D10091A538 /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B0250F46D00091A538 /* DateExtention.swift */; };
+		8367E5DD250F46D10091A538 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B1250F46D00091A538 /* FloatingPoint.swift */; };
+		8367E5DE250F46D10091A538 /* TableViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B2250F46D00091A538 /* TableViewExtention.swift */; };
+		8367E5DF250F46D10091A538 /* StoryBoardExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B3250F46D00091A538 /* StoryBoardExtention.swift */; };
+		8367E5E0250F46D10091A538 /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B4250F46D00091A538 /* StringExtention.swift */; };
+		8367E5E1250F46D10091A538 /* TextFieldExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B5250F46D00091A538 /* TextFieldExtention.swift */; };
+		8367E5E2250F46D10091A538 /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B6250F46D00091A538 /* ViewExtention.swift */; };
+		8367E5E4250F46D10091A538 /* MatajerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B9250F46D00091A538 /* MatajerUtility.swift */; };
+		836C1A80251CE15800D93018 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C1A7F251CE15800D93018 /* NotificationsVC.swift */; };
+		8370C1E7251BCF050021AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */; };
+		8376E469251B54D900A97604 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8376E46B251B54D900A97604 /* InfoPlist.strings */; };
+		83922457251091A900E60E34 /* DINNextLTArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E592250F46D00091A538 /* DINNextLTArabic-Regular.ttf */; };
+		83922458251091AC00E60E34 /* DINNextLTArabic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E591250F46D00091A538 /* DINNextLTArabic-Black.ttf */; };
+		83922459251091B000E60E34 /* DINNextLTArabic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E590250F46D00091A538 /* DINNextLTArabic-Heavy.ttf */; };
+		8392245A251091B200E60E34 /* DINNextLTArabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E58F250F46D00091A538 /* DINNextLTArabic-Medium.ttf */; };
+		8392245B251091B500E60E34 /* DINNextLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E58E250F46D00091A538 /* DINNextLTArabic-Bold.ttf */; };
+		8392245C251091B700E60E34 /* DINNextLTArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E58D250F46D00091A538 /* DINNextLTArabic-Light.ttf */; };
+		8392245D251091BA00E60E34 /* DINNextLTArabic-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E58C250F46D00091A538 /* DINNextLTArabic-UltraLight.ttf */; };
+		8392245F25109DDF00E60E34 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392245E25109DDF00E60E34 /* HomeVC.swift */; };
+		8392246225109EB300E60E34 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392246125109EB300E60E34 /* OrdersVC.swift */; };
+		8392246425109EC300E60E34 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392246325109EC300E60E34 /* ProductsVC.swift */; };
+		8392246625109ED600E60E34 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392246525109ED600E60E34 /* SettingsVC.swift */; };
+		8392246825109EE700E60E34 /* CustomersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8392246725109EE700E60E34 /* CustomersVC.swift */; };
+		8392246A2510A0D900E60E34 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839224692510A0D800E60E34 /* WebKit.framework */; };
+		839D1972252324C80048900C /* orderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D1971252324C80048900C /* orderDetailsVC.swift */; };
+		E8568031DC0C3D054F8691B1 /* Pods_Matajer_Traders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B9CF5361DF1D3AFA65C7E3 /* Pods_Matajer_Traders.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8367E56C250F36E40091A538 /* Matajer Traders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matajer Traders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B27853A1444EE83BBC094BF /* Pods-Matajer Traders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matajer Traders.debug.xcconfig"; path = "Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders.debug.xcconfig"; sourceTree = "<group>"; };
+		44B9CF5361DF1D3AFA65C7E3 /* Pods_Matajer_Traders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matajer_Traders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82AA03DB5A3EC12011352BE6 /* Pods-Matajer Traders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matajer Traders.release.xcconfig"; path = "Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders.release.xcconfig"; sourceTree = "<group>"; };
+		831E1638251CA1C40059D6E3 /* custom_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = custom_sound.caf; sourceTree = "<group>"; };
+		833FEF05251AE47600859EFE /* ReportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsVC.swift; sourceTree = "<group>"; };
+		833FEF08251AE4AD00859EFE /* MarketingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingVC.swift; sourceTree = "<group>"; };
+		833FEF0A251AE4CF00859EFE /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		833FEF0C251AE4DF00859EFE /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		833FEF0E251AE50F00859EFE /* ServicesClientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesClientsVC.swift; sourceTree = "<group>"; };
+		833FEF10251AE54400859EFE /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		833FEF12251B022A00859EFE /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		833FEF14251B023B00859EFE /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
+		834FAC822511EBC7001AE1EA /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		834FAC842511F34D001AE1EA /* IntroductionScreensVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionScreensVC.swift; sourceTree = "<group>"; };
+		834FAC8625123C47001AE1EA /* Register2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2VC.swift; sourceTree = "<group>"; };
+		83634712250F8C7B00CF2317 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		83634713250F8C7B00CF2317 /* NoInternetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoInternetVC.swift; sourceTree = "<group>"; };
+		83634714250F8C7B00CF2317 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		8363471C250F8C9000CF2317 /* ForegetPwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForegetPwdVC.swift; sourceTree = "<group>"; };
+		8363471D250F8C9000CF2317 /* ResetPwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPwdVC.swift; sourceTree = "<group>"; };
+		8363471F250F8C9000CF2317 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		83634720250F8C9000CF2317 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		8367E56C250F36E40091A538 /* Matajer Trader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matajer Trader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8367E56F250F36E40091A538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8367E571250F36E40091A538 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8367E573250F36E40091A538 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8367E576250F36E40091A538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8367E579250F36E50091A538 /* Matajer_Traders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Matajer_Traders.xcdatamodel; sourceTree = "<group>"; };
 		8367E57B250F36E70091A538 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8367E57E250F36E70091A538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8367E580250F36E70091A538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8367E588250F46D00091A538 /* Constatns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constatns.swift; sourceTree = "<group>"; };
+		8367E58C250F46D00091A538 /* DINNextLTArabic-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-UltraLight.ttf"; sourceTree = "<group>"; };
+		8367E58D250F46D00091A538 /* DINNextLTArabic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Light.ttf"; sourceTree = "<group>"; };
+		8367E58E250F46D00091A538 /* DINNextLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Bold.ttf"; sourceTree = "<group>"; };
+		8367E58F250F46D00091A538 /* DINNextLTArabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Medium.ttf"; sourceTree = "<group>"; };
+		8367E590250F46D00091A538 /* DINNextLTArabic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Heavy.ttf"; sourceTree = "<group>"; };
+		8367E591250F46D00091A538 /* DINNextLTArabic-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Black.ttf"; sourceTree = "<group>"; };
+		8367E592250F46D00091A538 /* DINNextLTArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINNextLTArabic-Regular.ttf"; sourceTree = "<group>"; };
+		8367E595250F46D00091A538 /* StatusResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusResult.swift; sourceTree = "<group>"; };
+		8367E596250F46D00091A538 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8367E5A2250F46D00091A538 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8367E5AD250F46D00091A538 /* NavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerExtention.swift; sourceTree = "<group>"; };
+		8367E5AE250F46D00091A538 /* LinePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinePageControl.swift; sourceTree = "<group>"; };
+		8367E5AF250F46D00091A538 /* ViewControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtention.swift; sourceTree = "<group>"; };
+		8367E5B0250F46D00091A538 /* DateExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
+		8367E5B1250F46D00091A538 /* FloatingPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
+		8367E5B2250F46D00091A538 /* TableViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtention.swift; sourceTree = "<group>"; };
+		8367E5B3250F46D00091A538 /* StoryBoardExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardExtention.swift; sourceTree = "<group>"; };
+		8367E5B4250F46D00091A538 /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
+		8367E5B5250F46D00091A538 /* TextFieldExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldExtention.swift; sourceTree = "<group>"; };
+		8367E5B6250F46D00091A538 /* ViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
+		8367E5B9250F46D00091A538 /* MatajerUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatajerUtility.swift; sourceTree = "<group>"; };
+		836C1A7F251CE15800D93018 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8370C1E8251BD2360021AF47 /* Matajer Trader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Matajer Trader.entitlements"; sourceTree = "<group>"; };
+		8376E46A251B54D900A97604 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8376E46C251B550500A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8376E46D251B550600A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		8376E46E251B550800A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8392245E25109DDF00E60E34 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		8392246125109EB300E60E34 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		8392246325109EC300E60E34 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		8392246525109ED600E60E34 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		8392246725109EE700E60E34 /* CustomersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersVC.swift; sourceTree = "<group>"; };
+		839224692510A0D800E60E34 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		839D1971252324C80048900C /* orderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,24 +141,101 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8392246A2510A0D900E60E34 /* WebKit.framework in Frameworks */,
+				E8568031DC0C3D054F8691B1 /* Pods_Matajer_Traders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A6EC369EEFB64FA4EE64827 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				839224692510A0D800E60E34 /* WebKit.framework */,
+				44B9CF5361DF1D3AFA65C7E3 /* Pods_Matajer_Traders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C66A24C81DCC20ED02710F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B27853A1444EE83BBC094BF /* Pods-Matajer Traders.debug.xcconfig */,
+				82AA03DB5A3EC12011352BE6 /* Pods-Matajer Traders.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		833FEF07251AE47B00859EFE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8392246525109ED600E60E34 /* SettingsVC.swift */,
+				833FEF05251AE47600859EFE /* ReportsVC.swift */,
+				833FEF08251AE4AD00859EFE /* MarketingVC.swift */,
+				833FEF0A251AE4CF00859EFE /* ContactVC.swift */,
+				833FEF0C251AE4DF00859EFE /* ProfileVC.swift */,
+				833FEF0E251AE50F00859EFE /* ServicesClientsVC.swift */,
+				833FEF10251AE54400859EFE /* MoreVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		83634711250F8C7B00CF2317 /* Screens Core */ = {
+			isa = PBXGroup;
+			children = (
+				83634712250F8C7B00CF2317 /* MainTabBar.swift */,
+				83634713250F8C7B00CF2317 /* NoInternetVC.swift */,
+				83634714250F8C7B00CF2317 /* LaunchScreenVC.swift */,
+			);
+			path = "Screens Core";
+			sourceTree = "<group>";
+		};
+		83634718250F8C9000CF2317 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				83634719250F8C9000CF2317 /* Reset Password */,
+				8363471E250F8C9000CF2317 /* Login */,
+				834FAC842511F34D001AE1EA /* IntroductionScreensVC.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		83634719250F8C9000CF2317 /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				8363471C250F8C9000CF2317 /* ForegetPwdVC.swift */,
+				8363471D250F8C9000CF2317 /* ResetPwdVC.swift */,
+			);
+			path = "Reset Password";
+			sourceTree = "<group>";
+		};
+		8363471E250F8C9000CF2317 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8363471F250F8C9000CF2317 /* RegisterVC.swift */,
+				83634720250F8C9000CF2317 /* LoginVC.swift */,
+				834FAC8625123C47001AE1EA /* Register2VC.swift */,
+				833FEF12251B022A00859EFE /* TermsVC.swift */,
+				833FEF14251B023B00859EFE /* PrivacyVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		8367E563250F36E40091A538 = {
 			isa = PBXGroup;
 			children = (
 				8367E56E250F36E40091A538 /* Matajer Traders */,
 				8367E56D250F36E40091A538 /* Products */,
+				7C66A24C81DCC20ED02710F2 /* Pods */,
+				0A6EC369EEFB64FA4EE64827 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		8367E56D250F36E40091A538 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8367E56C250F36E40091A538 /* Matajer Traders.app */,
+				8367E56C250F36E40091A538 /* Matajer Trader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,16 +243,131 @@
 		8367E56E250F36E40091A538 /* Matajer Traders */ = {
 			isa = PBXGroup;
 			children = (
+				8370C1E8251BD2360021AF47 /* Matajer Trader.entitlements */,
 				8367E56F250F36E40091A538 /* AppDelegate.swift */,
 				8367E571250F36E40091A538 /* SceneDelegate.swift */,
-				8367E573250F36E40091A538 /* ViewController.swift */,
-				8367E575250F36E40091A538 /* Main.storyboard */,
 				8367E57B250F36E70091A538 /* Assets.xcassets */,
 				8367E57D250F36E70091A538 /* LaunchScreen.storyboard */,
+				8367E575250F36E40091A538 /* Main.storyboard */,
+				834FAC822511EBC7001AE1EA /* Registration.storyboard */,
 				8367E580250F36E70091A538 /* Info.plist */,
+				8376E46B251B54D900A97604 /* InfoPlist.strings */,
 				8367E578250F36E50091A538 /* Matajer_Traders.xcdatamodeld */,
+				8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */,
+				831E1638251CA1C40059D6E3 /* custom_sound.caf */,
+				83634711250F8C7B00CF2317 /* Screens Core */,
+				83634718250F8C9000CF2317 /* Registration */,
+				8367E586250F46D00091A538 /* Shared */,
+				8392246025109DE900E60E34 /* Scense */,
 			);
 			path = "Matajer Traders";
+			sourceTree = "<group>";
+		};
+		8367E586250F46D00091A538 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8367E587250F46D00091A538 /* Constatns */,
+				8367E589250F46D00091A538 /* Resources */,
+				8367E594250F46D00091A538 /* Network */,
+				8367E597250F46D00091A538 /* Models */,
+				8367E5AC250F46D00091A538 /* Extentions */,
+				8367E5B8250F46D00091A538 /* Utility */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8367E587250F46D00091A538 /* Constatns */ = {
+			isa = PBXGroup;
+			children = (
+				8367E588250F46D00091A538 /* Constatns.swift */,
+			);
+			path = Constatns;
+			sourceTree = "<group>";
+		};
+		8367E589250F46D00091A538 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8367E58A250F46D00091A538 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8367E58A250F46D00091A538 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8367E58B250F46D00091A538 /* DIN Next Arabic Complete Family */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8367E58B250F46D00091A538 /* DIN Next Arabic Complete Family */ = {
+			isa = PBXGroup;
+			children = (
+				8367E58C250F46D00091A538 /* DINNextLTArabic-UltraLight.ttf */,
+				8367E58D250F46D00091A538 /* DINNextLTArabic-Light.ttf */,
+				8367E58E250F46D00091A538 /* DINNextLTArabic-Bold.ttf */,
+				8367E58F250F46D00091A538 /* DINNextLTArabic-Medium.ttf */,
+				8367E590250F46D00091A538 /* DINNextLTArabic-Heavy.ttf */,
+				8367E591250F46D00091A538 /* DINNextLTArabic-Black.ttf */,
+				8367E592250F46D00091A538 /* DINNextLTArabic-Regular.ttf */,
+			);
+			path = "DIN Next Arabic Complete Family";
+			sourceTree = "<group>";
+		};
+		8367E594250F46D00091A538 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8367E595250F46D00091A538 /* StatusResult.swift */,
+				8367E596250F46D00091A538 /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8367E597250F46D00091A538 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8367E5A2250F46D00091A538 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8367E5AC250F46D00091A538 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				8367E5AD250F46D00091A538 /* NavigationControllerExtention.swift */,
+				8367E5AE250F46D00091A538 /* LinePageControl.swift */,
+				8367E5AF250F46D00091A538 /* ViewControllerExtention.swift */,
+				8367E5B0250F46D00091A538 /* DateExtention.swift */,
+				8367E5B1250F46D00091A538 /* FloatingPoint.swift */,
+				8367E5B2250F46D00091A538 /* TableViewExtention.swift */,
+				8367E5B3250F46D00091A538 /* StoryBoardExtention.swift */,
+				8367E5B4250F46D00091A538 /* StringExtention.swift */,
+				8367E5B5250F46D00091A538 /* TextFieldExtention.swift */,
+				8367E5B6250F46D00091A538 /* ViewExtention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		8367E5B8250F46D00091A538 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8367E5B9250F46D00091A538 /* MatajerUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8392246025109DE900E60E34 /* Scense */ = {
+			isa = PBXGroup;
+			children = (
+				8392245E25109DDF00E60E34 /* HomeVC.swift */,
+				8392246125109EB300E60E34 /* OrdersVC.swift */,
+				8392246325109EC300E60E34 /* ProductsVC.swift */,
+				836C1A7F251CE15800D93018 /* NotificationsVC.swift */,
+				8392246725109EE700E60E34 /* CustomersVC.swift */,
+				839D1971252324C80048900C /* orderDetailsVC.swift */,
+				833FEF07251AE47B00859EFE /* Settings */,
+			);
+			path = Scense;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8367E583250F36E70091A538 /* Build configuration list for PBXNativeTarget "Matajer Traders" */;
 			buildPhases = (
+				421644C08D5AAFF7FC819D81 /* [CP] Check Pods Manifest.lock */,
 				8367E568250F36E40091A538 /* Sources */,
 				8367E569250F36E40091A538 /* Frameworks */,
 				8367E56A250F36E40091A538 /* Resources */,
+				BF7162F2DB4A134CE289F779 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -87,7 +389,7 @@
 			);
 			name = "Matajer Traders";
 			productName = "Matajer Traders";
-			productReference = 8367E56C250F36E40091A538 /* Matajer Traders.app */;
+			productReference = 8367E56C250F36E40091A538 /* Matajer Trader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,6 +414,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 8367E563250F36E40091A538;
 			productRefGroup = 8367E56D250F36E40091A538 /* Products */;
@@ -128,13 +431,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835CEDFC252097CD001226E5 /* custom_sound.caf in Resources */,
+				8392245B251091B500E60E34 /* DINNextLTArabic-Bold.ttf in Resources */,
+				8392245D251091BA00E60E34 /* DINNextLTArabic-UltraLight.ttf in Resources */,
+				834FAC832511EBC7001AE1EA /* Registration.storyboard in Resources */,
+				8376E469251B54D900A97604 /* InfoPlist.strings in Resources */,
 				8367E57F250F36E70091A538 /* LaunchScreen.storyboard in Resources */,
+				8370C1E7251BCF050021AF47 /* GoogleService-Info.plist in Resources */,
+				83922458251091AC00E60E34 /* DINNextLTArabic-Black.ttf in Resources */,
 				8367E57C250F36E70091A538 /* Assets.xcassets in Resources */,
 				8367E577250F36E40091A538 /* Main.storyboard in Resources */,
+				8392245A251091B200E60E34 /* DINNextLTArabic-Medium.ttf in Resources */,
+				8392245C251091B700E60E34 /* DINNextLTArabic-Light.ttf in Resources */,
+				83922459251091B000E60E34 /* DINNextLTArabic-Heavy.ttf in Resources */,
+				83922457251091A900E60E34 /* DINNextLTArabic-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		421644C08D5AAFF7FC819D81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Matajer Traders-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF7162F2DB4A134CE289F779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8367E568250F36E40091A538 /* Sources */ = {
@@ -142,9 +498,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				8367E57A250F36E50091A538 /* Matajer_Traders.xcdatamodeld in Sources */,
-				8367E574250F36E40091A538 /* ViewController.swift in Sources */,
+				8367E5E0250F46D10091A538 /* StringExtention.swift in Sources */,
+				833FEF0F251AE50F00859EFE /* ServicesClientsVC.swift in Sources */,
+				8392245F25109DDF00E60E34 /* HomeVC.swift in Sources */,
+				8367E5C3250F46D10091A538 /* StatusResult.swift in Sources */,
+				833FEF0D251AE4DF00859EFE /* ProfileVC.swift in Sources */,
+				8367E5E1250F46D10091A538 /* TextFieldExtention.swift in Sources */,
+				83634726250F8C9000CF2317 /* RegisterVC.swift in Sources */,
+				8367E5D9250F46D10091A538 /* NavigationControllerExtention.swift in Sources */,
+				833FEF09251AE4AD00859EFE /* MarketingVC.swift in Sources */,
+				8367E5DC250F46D10091A538 /* DateExtention.swift in Sources */,
+				8367E5DA250F46D10091A538 /* LinePageControl.swift in Sources */,
 				8367E570250F36E40091A538 /* AppDelegate.swift in Sources */,
+				833FEF13251B022A00859EFE /* TermsVC.swift in Sources */,
+				83634727250F8C9000CF2317 /* LoginVC.swift in Sources */,
+				8367E5DE250F46D10091A538 /* TableViewExtention.swift in Sources */,
+				833FEF0B251AE4D000859EFE /* ContactVC.swift in Sources */,
+				83634725250F8C9000CF2317 /* ResetPwdVC.swift in Sources */,
+				83634724250F8C9000CF2317 /* ForegetPwdVC.swift in Sources */,
+				834FAC8725123C47001AE1EA /* Register2VC.swift in Sources */,
+				8392246425109EC300E60E34 /* ProductsVC.swift in Sources */,
+				8367E5BA250F46D10091A538 /* Constatns.swift in Sources */,
+				8367E5C4250F46D10091A538 /* API.swift in Sources */,
+				8367E5E4250F46D10091A538 /* MatajerUtility.swift in Sources */,
+				8367E5DF250F46D10091A538 /* StoryBoardExtention.swift in Sources */,
+				833FEF15251B023B00859EFE /* PrivacyVC.swift in Sources */,
+				83634717250F8C7C00CF2317 /* LaunchScreenVC.swift in Sources */,
+				834FAC852511F34D001AE1EA /* IntroductionScreensVC.swift in Sources */,
+				8367E5DD250F46D10091A538 /* FloatingPoint.swift in Sources */,
+				836C1A80251CE15800D93018 /* NotificationsVC.swift in Sources */,
+				833FEF11251AE54400859EFE /* MoreVC.swift in Sources */,
 				8367E572250F36E40091A538 /* SceneDelegate.swift in Sources */,
+				8367E5DB250F46D10091A538 /* ViewControllerExtention.swift in Sources */,
+				8367E5E2250F46D10091A538 /* ViewExtention.swift in Sources */,
+				83634716250F8C7C00CF2317 /* NoInternetVC.swift in Sources */,
+				8392246225109EB300E60E34 /* OrdersVC.swift in Sources */,
+				839D1972252324C80048900C /* orderDetailsVC.swift in Sources */,
+				8392246825109EE700E60E34 /* CustomersVC.swift in Sources */,
+				833FEF06251AE47600859EFE /* ReportsVC.swift in Sources */,
+				8367E5CF250F46D10091A538 /* User.swift in Sources */,
+				83634715250F8C7C00CF2317 /* MainTabBar.swift in Sources */,
+				8392246625109ED600E60E34 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +549,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8367E576250F36E40091A538 /* Base */,
+				8376E46D251B550600A97604 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -163,8 +558,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8367E57E250F36E70091A538 /* Base */,
+				8376E46C251B550500A97604 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8376E46B251B54D900A97604 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8376E46A251B54D900A97604 /* en */,
+				8376E46E251B550800A97604 /* ar */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -174,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -234,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -286,8 +693,10 @@
 		};
 		8367E584250F36E70091A538 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B27853A1444EE83BBC094BF /* Pods-Matajer Traders.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Matajer Traders/Matajer Trader.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96RSKZJP5J;
 				INFOPLIST_FILE = "Matajer Traders/Info.plist";
@@ -295,17 +704,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibtikarat.Matajer-Traders";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.19;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.cPanel;
+				PRODUCT_NAME = "Matajer Trader";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8367E585250F36E70091A538 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82AA03DB5A3EC12011352BE6 /* Pods-Matajer Traders.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Matajer Traders/Matajer Trader.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96RSKZJP5J;
 				INFOPLIST_FILE = "Matajer Traders/Info.plist";
@@ -313,10 +725,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibtikarat.Matajer-Traders";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0.19;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.cPanel;
+				PRODUCT_NAME = "Matajer Trader";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,6 @@
+framework module Pods_Matajer_Traders {
+  umbrella header "Pods-Matajer Traders-umbrella.h"
+
+  export *
+  module * { export * }
+}

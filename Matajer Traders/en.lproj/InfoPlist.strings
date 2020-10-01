@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Matajer Traders
+
+  Created by Heba lubbad on 9/23/20.
+  Copyright © 2020 Ibtikarat. All rights reserved.
+*/
+"CFBundleDisplayName" = "Matajer";
+"CFBundleName" = "Matajer";

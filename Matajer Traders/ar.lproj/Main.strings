@@ -1,0 +1,63 @@
+
+/* Class = "UIButton"; normalTitle = "صفحة المتجر"; ObjectID = "1Ub-am-NtN"; */
+"1Ub-am-NtN.normalTitle" = "صفحة المتجر";
+
+/* Class = "UILabel"; text = "التسويق"; ObjectID = "67b-63-Vdo"; */
+"67b-63-Vdo.text" = "التسويق";
+
+/* Class = "UITabBarItem"; title = "الإعدادات"; ObjectID = "7qp-gG-x7U"; */
+"7qp-gG-x7U.title" = "أخرى";
+
+/* Class = "UILabel"; text = "خدمات الشركاء"; ObjectID = "ABF-9d-dfD"; */
+"ABF-9d-dfD.text" = "خدمات الشركاء";
+
+/* Class = "UIButton"; normalTitle = "معاينة المتجر"; ObjectID = "Bzl-qz-Myh"; */
+"Bzl-qz-Myh.normalTitle" = "معاينة المتجر";
+
+/* Class = "UILabel"; text = "تواصل معنا"; ObjectID = "DJn-dy-Gnl"; */
+"DJn-dy-Gnl.text" = "تواصل معنا";
+
+/* Class = "UITabBarItem"; title = "الرئيسية"; ObjectID = "MTb-Et-fVY"; */
+"MTb-Et-fVY.title" = "الرئيسية";
+
+/* Class = "UILabel"; text = "التقارير"; ObjectID = "PHK-Hd-DyT"; */
+"PHK-Hd-DyT.text" = "التقارير";
+
+/* Class = "UILabel"; text = "الإعدادات"; ObjectID = "SKS-vR-hHA"; */
+"SKS-vR-hHA.text" = "الإعدادات";
+
+/* Class = "UILabel"; text = "خدمات الشركاء"; ObjectID = "V05-Ry-kJ2"; */
+"V05-Ry-kJ2.text" = "خدمات الشركاء";
+
+/* Class = "UILabel"; text = "التسويق"; ObjectID = "ai7-Jt-WZq"; */
+"ai7-Jt-WZq.text" = "التسويق";
+
+/* Class = "UILabel"; text = "تواصل معنا"; ObjectID = "cSP-Wd-cdZ"; */
+"cSP-Wd-cdZ.text" = "تواصل معنا";
+
+/* Class = "UITabBarItem"; title = "المنتجات"; ObjectID = "dV6-eY-EcG"; */
+"dV6-eY-EcG.title" = "المنتجات";
+
+/* Class = "UILabel"; text = "الملف الشخصي"; ObjectID = "dYE-45-aZb"; */
+"dYE-45-aZb.text" = "الملف الشخصي";
+
+/* Class = "UILabel"; text = "الملف الشخصي"; ObjectID = "iXX-j2-fhk"; */
+"iXX-j2-fhk.text" = "الملف الشخصي";
+
+/* Class = "UILabel"; text = "الإعدادات"; ObjectID = "ivv-2V-ZSN"; */
+"ivv-2V-ZSN.text" = "الإعدادات";
+
+/* Class = "UITabBarItem"; title = "الطلبات"; ObjectID = "qx6-DP-8FJ"; */
+"qx6-DP-8FJ.title" = "الطلبات";
+
+/* Class = "UILabel"; text = "التقارير"; ObjectID = "rb0-Xx-iei"; */
+"rb0-Xx-iei.text" = "التقارير";
+
+/* Class = "UITabBarItem"; title = "العملاء"; ObjectID = "sv4-Ei-0nR"; */
+"sv4-Ei-0nR.title" = "العملاء";
+
+/* Class = "UILabel"; text = "متاجر v.1.01 "; ObjectID = "vgt-6T-bvt"; */
+"vgt-6T-bvt.text" = "متاجر v.1.01 ";
+
+/* Class = "UILabel"; text = "تسجيل الخروج"; ObjectID = "yJE-td-kiR"; */
+"yJE-td-kiR.text" = "تسجيل الخروج";

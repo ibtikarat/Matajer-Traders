@@ -130,6 +130,32 @@ class SettingsVC: UIViewController , WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-          print("Error loading \(error)")
-      }
+        print("Error loading \(error)")
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+        
+        if let currentURL = navigationAction.request.url?.absoluteString{
+            print(currentURL)
+            if (currentURL.contains("/page/") ||
+                    currentURL.contains("alahlionline") ||
+                    currentURL.contains("alrajhibank") ||
+                    currentURL.contains("name.com") ||
+                    currentURL.contains("freelance")  ) {
+                if let url = URL(string: "\(currentURL)"),
+                    UIApplication.shared.canOpenURL(url)
+                {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                } 
+            }
+        }
+        
+        
+        decisionHandler(.allow)
+    }
 }
+

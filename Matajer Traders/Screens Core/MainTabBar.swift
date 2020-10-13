@@ -53,6 +53,23 @@ class MainTabBar:  UITabBarController, UITabBarControllerDelegate{
             }
         }
         
+        NotificationCenter.default.addObserver(forName:  NSNotification.Name(rawValue:"GoToSuperNotifications"), object: nil, queue: nil) { (notification) in
+            self.routeToHome()
+        }
+        NotificationCenter.default.addObserver(forName:  NSNotification.Name(rawValue:"GoToNotifications"), object: nil, queue: nil) { (notification) in
+             DispatchQueue.main.asyncAfter(deadline: .now()) {
+              
+                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                     let vc = (mainStoryboard.instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC)!
+                     let navigationCont = self.selectedViewController as! UINavigationController
+                     DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                         navigationCont.pushViewController(vc, animated: true)
+                     }
+              
+             }
+         }
+        
+        
         
     }
     

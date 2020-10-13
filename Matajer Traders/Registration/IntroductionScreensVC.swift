@@ -15,6 +15,7 @@ import IBAnimatable
 class IntroductionScreensVC: UIViewController {
     @IBOutlet var bottimView: UIView!
     @IBOutlet var title1Lbl: UILabel!
+    @IBOutlet var pageControl: UIPageControl!
     
     @IBOutlet var title2Lbl: UILabel!
     @IBOutlet var imageSlideShow: ImageSlideshow!
@@ -26,9 +27,22 @@ class IntroductionScreensVC: UIViewController {
     
     let localSource = [BundleImageSource(imageString: "screen_1"), BundleImageSource(imageString: "screen_2"),BundleImageSource(imageString: "screen_3"), BundleImageSource(imageString: "screen_4")]
     
+    let activeImage: UIImage = UIImage(named: "page_select")!
+    let inactiveImage: UIImage = UIImage(named: "page_unselect")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 14.0, *) {
+            pageControl.preferredIndicatorImage  = self.inactiveImage
+            pageControl.setIndicatorImage(self.activeImage,
+                                          forPage: 0)
+            pageControl.currentPageIndicatorTintColor = Constants.PrimaryColor
+            pageControl.pageIndicatorTintColor = Constants.gray_color
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        
         title1Lbl.text = "تجارتك بين يدك "
         title2Lbl.text = "بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك"
         bottimView.visibility = .invisible
@@ -36,8 +50,16 @@ class IntroductionScreensVC: UIViewController {
         imageSlideShow.transform = CGAffineTransform(scaleX: -1, y: 1)
         imageSlideShow.pageIndicatorPosition = .init()
         //.init(horizontal: .left(padding: 20), vertical: .customUnder(padding: 0))
-        let pageControl = LocationPageControl()
-        imageSlideShow.pageIndicator = pageControl
+       
+        if #available(iOS 14.0, *) {
+            imageSlideShow.pageIndicator = self.pageControl
+            
+        } else {
+            self.pageControl.isHidden = true
+          let page_control = LocationPageControl()
+            imageSlideShow.pageIndicator = page_control
+        }
+       
         pageControl.transform = CGAffineTransform(scaleX: -1, y: 1)
         imageSlideShow.activityIndicator = DefaultActivityIndicator()
         imageSlideShow.delegate = self
@@ -50,13 +72,13 @@ class IntroductionScreensVC: UIViewController {
         super.viewDidLayoutSubviews()
         startTradeBtn.applyGradient(colours: [Constants.app_gradiant_1 ?? UIColor.black,
                                               Constants.app_gradiant_2 ?? UIColor.black],gradientOrientation :
-            .horizontal)
+                                                .horizontal)
     }
     
     
     
     @IBAction func startTradeAction(_ sender: Any) {
-          self.Register()
+        self.Register()
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -74,19 +96,59 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
             title1Lbl.text = "تجارتك بين يدك "
             title2Lbl.text = "بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك "
             bottimView.visibility = .invisible
+            if #available(iOS 14.0, *) {
+                pageControl.setIndicatorImage(self.activeImage,
+                                              forPage: 0)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 1)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 2)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 3)
+            }
         case 1:
             title1Lbl.text = "فعّل  خيارات الدفع بضغطة زر "
             title2Lbl.text = "قدّم خيارات دفع أكثر  لعملائك  (  مدى , فيزا , ماستر , Apple Pay  ، تحويل بنكي ، الدفع عند الإستلام )"
             bottimView.visibility = .invisible
-            
+            if #available(iOS 14.0, *) {
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 0)
+                pageControl.setIndicatorImage(self.activeImage,
+                                              forPage: 1)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 2)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 3)
+            }
         case 2:
             title1Lbl.text = "فعّل  خيارات الشحن  بضغطة زر "
             title2Lbl.text = "خيارات شحن متنوعة لجعل منتجاتك تصل لعميلك بسهول ( سمسا ، ارامكس ، البريد السعودي ، طريقة  شحن خاصة )"
             bottimView.visibility = .invisible
+            if #available(iOS 14.0, *) {
+                pageControl.setIndicatorImage(self.activeImage,
+                                              forPage: 2)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 3)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 1)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 0)
+                
+            }
         case 3:
             title1Lbl.text = "متابعة طلبات عملائك "
             title2Lbl.text = "تابع طلبات عملائك و قم بإستقبال الاشعارات للطلبات الجديدة"
             bottimView.visibility = .visible
+            if #available(iOS 14.0, *) {
+                pageControl.setIndicatorImage(self.activeImage,
+                                              forPage: 3)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 2)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 1)
+                pageControl.setIndicatorImage(self.inactiveImage,
+                                              forPage: 0)
+            }
             
         default:
             title1Lbl.text = "تجارتك بين يدك "

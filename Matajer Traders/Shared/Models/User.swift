@@ -13,7 +13,7 @@ class User :Codable
     
     let allowNotifi : String?
     let apiToken : String?
-  //  let birthday : String?
+    //  let birthday : String?
     let createdAt : String?
     let createdAtTimeAgo : String?
     //  let deactivatedAt : String?
@@ -27,6 +27,7 @@ class User :Codable
     let showRate : Int?
     // let userFcmToken : [UserFcmToken]?
     let storeData : StoreData?
+    
     
     
     enum CodingKeys: String, CodingKey {
@@ -46,6 +47,7 @@ class User :Codable
         case showRate = "show_rate"
         // case userFcmToken = "user_fcm_token"
         case storeData = "store_data"
+        
         
         
     }
@@ -106,6 +108,8 @@ class StoreData : Codable {
     let nameEn : String?
     let websiteUrl : String?
     let matajerSupportWhatsapp:Int?
+    let is_paid_subscription:Int?
+    let ios_popup_topic:String?
     
     enum CodingKeys: String, CodingKey {
         case appStore = "appStore"
@@ -120,6 +124,8 @@ class StoreData : Codable {
         case nameEn = "name_en"
         case websiteUrl = "websiteUrl"
         case matajerSupportWhatsapp = "matajerSupportWhatsapp"
+        case is_paid_subscription = "is_paid_subscription"
+        case ios_popup_topic = "ios_popup_topic"
     }
     
     required init(from decoder: Decoder) throws {
@@ -136,6 +142,8 @@ class StoreData : Codable {
         nameEn = try values.decodeIfPresent(String.self, forKey: .nameEn)
         websiteUrl = try values.decodeIfPresent(String.self, forKey: .websiteUrl)
         matajerSupportWhatsapp = try values.decodeIfPresent(Int.self, forKey: .matajerSupportWhatsapp)
+        is_paid_subscription = try values.decodeIfPresent(Int.self, forKey: .is_paid_subscription)
+        ios_popup_topic = try values.decodeIfPresent(String.self, forKey: .ios_popup_topic)
     }
     
 }

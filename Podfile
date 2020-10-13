@@ -22,6 +22,7 @@ target 'Matajer Traders' do
   pod 'IBAnimatable'
   pod 'SVProgressHUD'
   pod 'SwiftMessages'
+  pod 'SwiftSoup'
   
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Core'

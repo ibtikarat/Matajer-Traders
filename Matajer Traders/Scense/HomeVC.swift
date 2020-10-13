@@ -176,5 +176,14 @@ class HomeVC: UIViewController, WKNavigationDelegate {
         print("Error loading \(error)")
     }
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+
+        if let currentURL = navigationAction.request.url?.absoluteString{
+                print(currentURL)
+        }
+
+        decisionHandler(.allow)
+    }
+    
     
 }

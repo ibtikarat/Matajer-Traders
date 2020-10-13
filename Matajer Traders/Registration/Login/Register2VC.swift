@@ -16,7 +16,7 @@ class Register2VC: UIViewController {
     @IBOutlet var topImgv: UIImageView!
     @IBOutlet var availableLbl: AnimatableLabel!
     @IBOutlet var appLinkLbl: AnimatableLabel!
-    @IBOutlet var haveTradeBtn: AnimatableCheckBox!
+    @IBOutlet var haveTradeBtn: UIButton!
     @IBOutlet var sourceRegistrationTF: AnimatableTextField!
     @IBOutlet var otherView: AnimatableView!
     @IBOutlet var otherTF: AnimatableTextField!
@@ -31,13 +31,14 @@ class Register2VC: UIViewController {
     var password:String?
     var source:String?
     var link:String?
+    var checked = false
     @IBOutlet var registerBtn: AnimatableButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.isHidden = true
-    
+        
         enNameTF.keyboardType = .alphabet
         otherView.visibility = .gone
         availableLbl.visibility = .gone
@@ -121,7 +122,17 @@ class Register2VC: UIViewController {
         
     }
     
-    @IBAction func isHaveTradeAction(_ sender: Any) {
+    @IBAction func isHaveTradeAction(_ sender: UIButton) {
+        if !checked {
+            self.haveTradeBtn.setImage(UIImage(named: "switch_on"), for: .normal)
+            self.haveTradeBtn.tintColor = Constants.PrimaryColor
+        }else {
+            self.haveTradeBtn.setImage(UIImage(named: "switch_off"), for: .normal)
+            self.haveTradeBtn.tintColor = Constants.LightPrimaryColor
+            
+        }
+        checked.toggle()
+        
     }
     @IBAction func registerAction(_ sender: Any) {
         switch validationInput()
@@ -183,7 +194,7 @@ class Register2VC: UIViewController {
         params["name_ar"] = arNameTF.text ?? ""
         params["registration_source"] = source ?? ""
         params["registration_other_content"] = otherTF.text ?? ""
-        params["have_trade"] = haveTradeBtn.checked ? "1" : "0"
+        params["have_trade"] = checked ? "1" : "0"
         params["fcm_token"] =  UserDefaults.standard.string(forKey: "fcmToken") ?? ""
         params["device_type"] = "ios"
         params["uuid"] = UIDevice.current.identifierForVendor?.uuidString
@@ -201,6 +212,22 @@ class Register2VC: UIViewController {
                         print("Subscribed to iosArTopic topic")
                     }
                 }
+                Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosTopic) { error in
+                    if error == nil {
+                        
+                        print("Subscribed to ios Topic topic")
+                    }
+                }
+                
+                if user.storeData?.ios_popup_topic?.count ?? 0 > 0 {
+                    Messaging.messaging().subscribe(toTopic: (user.storeData?.ios_popup_topic!)!) { error in
+                                    if error == nil {
+                                        
+                                        print("Subscribed to ios Topic Package")
+                                    }
+                                }
+                }
+                
                 
                 self.routeToHome()
             }else{
@@ -306,7 +333,7 @@ extension Register2VC : UITextFieldDelegate {
             }else {
                 self.availableLbl.visibility = .gone
                 self.appLinkLbl.visibility = .gone
-               
+                
             }
             
             
@@ -328,12 +355,12 @@ extension Register2VC : UITextFieldDelegate {
                 self.availableLbl.visibility = .visible
                 self.appLinkLbl.visibility = .visible
                 self.appLinkLbl.text = "رابط متجرك سيكون بالشكل التالي: https://mapp.sa/\(self.link ?? "")"
-              
+                
                 
             }else{
                 self.availableLbl.visibility = .gone
                 self.appLinkLbl.visibility = .gone
-               
+                
                 self.showBunnerAlert(title: "", message: response.errorMessege)
             }
         }

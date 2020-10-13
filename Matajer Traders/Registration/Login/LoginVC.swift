@@ -100,6 +100,22 @@ class LoginVC: UIViewController  {
                             }
                         }
                 
+                Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosTopic) { error in
+                                          if error == nil {
+                                         
+                                              print("Subscribed to ios Topic topic")
+                                          }
+                                      }
+                              if user.storeData?.ios_popup_topic?.count ?? 0 > 0 {
+                                Messaging.messaging().subscribe(toTopic: (user.storeData?.ios_popup_topic!)!) { error in
+                                                               if error == nil {
+                                                                   
+                                                                   print("Subscribed to ios Topic Package")
+                                                               }
+                                                           }
+                                           }
+                
+                
                 MatajerUtility.setNotificationNo(notifcation_number:user.notificationAlarm ?? 0)
                 UIApplication.shared.applicationIconBadgeNumber = user.notificationAlarm ?? 0
                 

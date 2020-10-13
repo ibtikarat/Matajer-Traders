@@ -28,6 +28,7 @@ class MarketingVC: UIViewController , WKNavigationDelegate {
         webView.scrollView.addSubview(refreshControl)
         webView.scrollView.bounces = true
         webView.navigationDelegate = self
+        self.loadPage()
         
     }
     
@@ -112,4 +113,13 @@ class MarketingVC: UIViewController , WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
           print("Error loading \(error)")
       }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+
+           if let currentURL = navigationAction.request.url?.absoluteString{
+                   print(currentURL)
+            
+           }
+
+           decisionHandler(.allow)
+       }
 }

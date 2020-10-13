@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83325DE6252C441A00E72DAA /* PackagesPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83325DE5252C441A00E72DAA /* PackagesPopUpVC.swift */; };
+		8336EADB253474870090000F /* WKWebviewDownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336EADA253474870090000F /* WKWebviewDownloadHelper.swift */; };
+		8336EB4E25348A980090000F /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336EB4D25348A980090000F /* WebCacheCleaner.swift */; };
 		833FEF06251AE47600859EFE /* ReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF05251AE47600859EFE /* ReportsVC.swift */; };
 		833FEF09251AE4AD00859EFE /* MarketingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF08251AE4AD00859EFE /* MarketingVC.swift */; };
 		833FEF0B251AE4D000859EFE /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FEF0A251AE4CF00859EFE /* ContactVC.swift */; };
@@ -26,6 +29,8 @@
 		83634725250F8C9000CF2317 /* ResetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363471D250F8C9000CF2317 /* ResetPwdVC.swift */; };
 		83634726250F8C9000CF2317 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8363471F250F8C9000CF2317 /* RegisterVC.swift */; };
 		83634727250F8C9000CF2317 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83634720250F8C9000CF2317 /* LoginVC.swift */; };
+		83653DBF252C618E00E8316F /* SuperNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83653DBE252C618E00E8316F /* SuperNotificationVC.swift */; };
+		83653DC1252C644E00E8316F /* iPhone.css in Resources */ = {isa = PBXBuildFile; fileRef = 83653DC0252C644D00E8316F /* iPhone.css */; };
 		8367E570250F36E40091A538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E56F250F36E40091A538 /* AppDelegate.swift */; };
 		8367E572250F36E40091A538 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E571250F36E40091A538 /* SceneDelegate.swift */; };
 		8367E577250F36E40091A538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8367E575250F36E40091A538 /* Main.storyboard */; };
@@ -72,6 +77,9 @@
 		44B9CF5361DF1D3AFA65C7E3 /* Pods_Matajer_Traders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Matajer_Traders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AA03DB5A3EC12011352BE6 /* Pods-Matajer Traders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Matajer Traders.release.xcconfig"; path = "Target Support Files/Pods-Matajer Traders/Pods-Matajer Traders.release.xcconfig"; sourceTree = "<group>"; };
 		831E1638251CA1C40059D6E3 /* custom_sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = custom_sound.caf; sourceTree = "<group>"; };
+		83325DE5252C441A00E72DAA /* PackagesPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesPopUpVC.swift; sourceTree = "<group>"; };
+		8336EADA253474870090000F /* WKWebviewDownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebviewDownloadHelper.swift; sourceTree = "<group>"; };
+		8336EB4D25348A980090000F /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
 		833FEF05251AE47600859EFE /* ReportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsVC.swift; sourceTree = "<group>"; };
 		833FEF08251AE4AD00859EFE /* MarketingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingVC.swift; sourceTree = "<group>"; };
 		833FEF0A251AE4CF00859EFE /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
@@ -90,6 +98,8 @@
 		8363471D250F8C9000CF2317 /* ResetPwdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPwdVC.swift; sourceTree = "<group>"; };
 		8363471F250F8C9000CF2317 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		83634720250F8C9000CF2317 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		83653DBE252C618E00E8316F /* SuperNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperNotificationVC.swift; sourceTree = "<group>"; };
+		83653DC0252C644D00E8316F /* iPhone.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iPhone.css; sourceTree = "<group>"; };
 		8367E56C250F36E40091A538 /* Matajer Trader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matajer Trader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8367E56F250F36E40091A538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8367E571250F36E40091A538 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +138,7 @@
 		8376E46D251B550600A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		8376E46E251B550800A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8392245E25109DDF00E60E34 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		8392246125109EB300E60E34 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		8392246125109EB300E60E34 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8392246325109EC300E60E34 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		8392246525109ED600E60E34 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		8392246725109EE700E60E34 /* CustomersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersVC.swift; sourceTree = "<group>"; };
@@ -187,6 +197,8 @@
 				83634712250F8C7B00CF2317 /* MainTabBar.swift */,
 				83634713250F8C7B00CF2317 /* NoInternetVC.swift */,
 				83634714250F8C7B00CF2317 /* LaunchScreenVC.swift */,
+				83325DE5252C441A00E72DAA /* PackagesPopUpVC.swift */,
+				83653DBE252C618E00E8316F /* SuperNotificationVC.swift */,
 			);
 			path = "Screens Core";
 			sourceTree = "<group>";
@@ -251,6 +263,7 @@
 				8367E575250F36E40091A538 /* Main.storyboard */,
 				834FAC822511EBC7001AE1EA /* Registration.storyboard */,
 				8367E580250F36E70091A538 /* Info.plist */,
+				83653DC0252C644D00E8316F /* iPhone.css */,
 				8376E46B251B54D900A97604 /* InfoPlist.strings */,
 				8367E578250F36E50091A538 /* Matajer_Traders.xcdatamodeld */,
 				8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */,
@@ -272,6 +285,8 @@
 				8367E597250F46D00091A538 /* Models */,
 				8367E5AC250F46D00091A538 /* Extentions */,
 				8367E5B8250F46D00091A538 /* Utility */,
+				8336EADA253474870090000F /* WKWebviewDownloadHelper.swift */,
+				8336EB4D25348A980090000F /* WebCacheCleaner.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -436,6 +451,7 @@
 				8392245D251091BA00E60E34 /* DINNextLTArabic-UltraLight.ttf in Resources */,
 				834FAC832511EBC7001AE1EA /* Registration.storyboard in Resources */,
 				8376E469251B54D900A97604 /* InfoPlist.strings in Resources */,
+				83653DC1252C644E00E8316F /* iPhone.css in Resources */,
 				8367E57F250F36E70091A538 /* LaunchScreen.storyboard in Resources */,
 				8370C1E7251BCF050021AF47 /* GoogleService-Info.plist in Resources */,
 				83922458251091AC00E60E34 /* DINNextLTArabic-Black.ttf in Resources */,
@@ -507,14 +523,17 @@
 				83634726250F8C9000CF2317 /* RegisterVC.swift in Sources */,
 				8367E5D9250F46D10091A538 /* NavigationControllerExtention.swift in Sources */,
 				833FEF09251AE4AD00859EFE /* MarketingVC.swift in Sources */,
+				8336EB4E25348A980090000F /* WebCacheCleaner.swift in Sources */,
 				8367E5DC250F46D10091A538 /* DateExtention.swift in Sources */,
 				8367E5DA250F46D10091A538 /* LinePageControl.swift in Sources */,
 				8367E570250F36E40091A538 /* AppDelegate.swift in Sources */,
 				833FEF13251B022A00859EFE /* TermsVC.swift in Sources */,
+				83325DE6252C441A00E72DAA /* PackagesPopUpVC.swift in Sources */,
 				83634727250F8C9000CF2317 /* LoginVC.swift in Sources */,
 				8367E5DE250F46D10091A538 /* TableViewExtention.swift in Sources */,
 				833FEF0B251AE4D000859EFE /* ContactVC.swift in Sources */,
 				83634725250F8C9000CF2317 /* ResetPwdVC.swift in Sources */,
+				8336EADB253474870090000F /* WKWebviewDownloadHelper.swift in Sources */,
 				83634724250F8C9000CF2317 /* ForegetPwdVC.swift in Sources */,
 				834FAC8725123C47001AE1EA /* Register2VC.swift in Sources */,
 				8392246425109EC300E60E34 /* ProductsVC.swift in Sources */,
@@ -535,6 +554,7 @@
 				8392246225109EB300E60E34 /* OrdersVC.swift in Sources */,
 				839D1972252324C80048900C /* orderDetailsVC.swift in Sources */,
 				8392246825109EE700E60E34 /* CustomersVC.swift in Sources */,
+				83653DBF252C618E00E8316F /* SuperNotificationVC.swift in Sources */,
 				833FEF06251AE47600859EFE /* ReportsVC.swift in Sources */,
 				8367E5CF250F46D10091A538 /* User.swift in Sources */,
 				83634715250F8C7C00CF2317 /* MainTabBar.swift in Sources */,
@@ -704,11 +724,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.19;
+				MARKETING_VERSION = 1.0.24;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.cPanel;
 				PRODUCT_NAME = "Matajer Trader";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -725,11 +745,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.19;
+				MARKETING_VERSION = 1.0.24;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.cPanel;
 				PRODUCT_NAME = "Matajer Trader";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

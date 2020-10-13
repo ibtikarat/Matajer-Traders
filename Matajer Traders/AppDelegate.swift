@@ -52,8 +52,6 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
         print("will present user info\(notification.request.content.userInfo)")
         let userInfo = notification.request.content.userInfo
         if userInfo["badge"] != nil {
-            
-            
             let badge = userInfo["badge"] as? String ?? "0"
             
             let badge_no = Int(badge)
@@ -65,13 +63,12 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateNotificationNumber"), object: self, userInfo: BadgeInfo)
             }
             
-            
-            
         }
         if userInfo["model"] as? String ?? "" == "userInfo" {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUserInfo"), object: self, userInfo: nil)
         }
+        
         
         completionHandler([.alert, .badge, .sound])
         
@@ -90,6 +87,40 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
             let Info = ["id":order_id ?? 0,"order_number": orderNo] as [String : Any]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "GoToOrders"), object: self, userInfo: Info)
         }
+        
+        if userInfo["badge"] != nil {
+            let badge = userInfo["badge"] as? String ?? "0"
+            
+            let badge_no = Int(badge)
+            if badge_no  ?? 0 > 0 {
+                MatajerUtility.setNotificationNo(notifcation_number:badge_no ?? 0 )
+                UIApplication.shared.applicationIconBadgeNumber = badge_no ?? 0
+                let BadgeInfo = ["badge": badge_no ?? 0] as [String : Any]
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateNotificationNumber"), object: self, userInfo: BadgeInfo)
+            }
+            
+        }
+        
+        if userInfo["model_name"] as? String ?? "" == "info" {
+            let iosPopupTopic = userInfo["ios_popup_topic"] as? String ?? ""
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "GoToNotifications"), object: self, userInfo: nil)
+            if MatajerUtility.isLogin() {
+                
+                Messaging.messaging().subscribe(toTopic: iosPopupTopic) { error in
+                    if error == nil {
+                        
+                        print("Subscribed to ios Topic Package")
+                    }
+                }
+            }
+        }
+        if userInfo["model_name"] as? String ?? "" == "popup" {
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "GoToSuperNotifications"), object: self, userInfo: nil)
+        }
+        
         completionHandler()
     }
     
@@ -209,6 +240,14 @@ extension AppDelegate {
         if  MatajerUtility.isLogin()
         {
             Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosArTopic)
+            Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosTopic) { error in
+                if error == nil {
+                    
+                    print("Subscribed to ios Topic topic")
+                }
+            }
+            
+            
         }
         
         

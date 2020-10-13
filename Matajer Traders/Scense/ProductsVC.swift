@@ -140,10 +140,11 @@ class ProductsVC: UIViewController , WKNavigationDelegate {
                         
                         mainHeaderView.isHidden = true
                         subHeaderView.isHidden = false
+                         titleLbl.text =  webView.title
                     }else {
                         mainHeaderView.isHidden = false
                         subHeaderView.isHidden = true
-                        titleLbl.text =  webView.title
+                       
                     }
                     print(currentURL)
                     if currentURL.contains("storeLogin"){
@@ -172,5 +173,25 @@ class ProductsVC: UIViewController , WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("Error loading \(error)")
+    }
+
+     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+
+        if let currentURL = navigationAction.request.url?.absoluteString{
+                print(currentURL)
+            if (currentURL.contains("/product/") && currentURL.contains("view")) {
+                if let url = URL(string: "\(currentURL)"),
+                           UIApplication.shared.canOpenURL(url)
+                       {
+                           if #available(iOS 10.0, *) {
+                               UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                           } else {
+                               UIApplication.shared.openURL(url)
+                           }
+                       }
+            }
+        }
+
+        decisionHandler(.allow)
     }
 }

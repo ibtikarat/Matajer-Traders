@@ -27,7 +27,7 @@ class MoreVC: UIViewController , WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         if MatajerUtility.loadUser()?.storeData?.appStore?.count ?? 0 > 1 {
             appleView.isHidden = false
         }else {
@@ -85,13 +85,13 @@ class MoreVC: UIViewController , WKNavigationDelegate {
     }
     
     @IBAction func goToNotificationsAction(_ sender: Any) {
-         routeNoifications()
-     }
+        routeNoifications()
+    }
     @IBAction func goToSettingsAction(_ sender: Any) {
         self.routeSettings()
     }
     
-     
+    
     @IBAction func previewAction(_ sender: Any) {
         if row_imgV.image == Constants.row_down {
             row_imgV.image = Constants.row_up
@@ -156,10 +156,18 @@ class MoreVC: UIViewController , WKNavigationDelegate {
         }
         
     }
-   
+    
     @IBAction func logoutAction(_ sender: Any) {
         self.singOut()
     }
     
+    @IBAction func routeRepotsAction(_ sender: Any) {
+        if MatajerUtility.loadUser()?.storeData?.is_paid_subscription ?? 0 == 1
+        {
+            routeReports()
+        }else {
+            self.routePopUp()
+        }
+    }
     
 }

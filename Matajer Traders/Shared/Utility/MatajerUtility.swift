@@ -42,7 +42,7 @@ class MatajerUtility: NSObject {
         
     }
     
-  
+    
     static func saveUser(user :User){
         UserDefaults.standard.set(try! PropertyListEncoder().encode(user), forKey: "user")
     }
@@ -61,13 +61,13 @@ class MatajerUtility: NSObject {
     }
     
     static func isFirstTime() -> Bool{
-         let hasBeenLaunchedBeforeFlag = "hasBeenLaunchedBeforeFlag"
-            let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)
-            if (isFirstLaunch) {
-                UserDefaults.standard.set(true, forKey: hasBeenLaunchedBeforeFlag)
-                UserDefaults.standard.synchronize()
-            }
-            return isFirstLaunch
+        let hasBeenLaunchedBeforeFlag = "hasBeenLaunchedBeforeFlag"
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)
+        if (isFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: hasBeenLaunchedBeforeFlag)
+            UserDefaults.standard.synchronize()
+        }
+        return isFirstLaunch
     }
     
     static func setFirstTime(isNotFirstTime :Bool){
@@ -90,27 +90,35 @@ class MatajerUtility: NSObject {
         }
         
         MatajerUtility.setIsSubscribe(subscribe: false)
-               Messaging.messaging().unsubscribe(fromTopic: API.FIREBASE_SUBSCRIBE_iosArTopic){ error in
-                  
-                   if error == nil {
-                       InstanceID.instanceID().deleteID { (error) in
-                                  if error != nil{
-                                      print("FIREBASE: ", error.debugDescription);
-                                     
-                                  } else {
-                                      print("FIREBASE: Token Deleted");
-                                     MatajerUtility.setIsSubscribe(subscribe: false)
-                                     
-                                  }
-                              }
-                     
-                   }
-               }
-  
+        Messaging.messaging().unsubscribe(fromTopic: API.FIREBASE_SUBSCRIBE_iosArTopic){ error in
+            
+            if error == nil {
+                InstanceID.instanceID().deleteID { (error) in
+                    if error != nil{
+                        print("FIREBASE: ", error.debugDescription);
+                        
+                    } else {
+                        print("FIREBASE: Token Deleted");
+                        MatajerUtility.setIsSubscribe(subscribe: false)
+                        
+                    }
+                }
+                
+            }
+            Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosTopic) { error in
+                if error == nil {
+                    
+                    print("Subscribed to ios Topic topic")
+                }
+            }
+            
+            
+        }
+        
         UserDefaults.standard.removeObject(forKey: "user")
         MatajerUtility.setNotificationNo(notifcation_number: 0)
         UIApplication.shared.applicationIconBadgeNumber = 0
-       
+        
         
     }
     

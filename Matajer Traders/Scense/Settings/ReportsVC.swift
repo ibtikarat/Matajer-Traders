@@ -85,6 +85,16 @@ class ReportsVC: UIViewController , WKNavigationDelegate {
                     titleLbl.text =  webView.title
                 if let currentURL = self.webView.url?.absoluteString{
                     print(currentURL)
+                    webView.evaluateJavaScript("document.getElementById('print').onclick();") { (key, err) in
+                            if let err = err{
+                                print(err.localizedDescription)
+                            }
+                            else{
+                                print("You tapped the button!")
+                            }
+                        
+                        
+                    }
                     if currentURL.description != "\(API.DOMAIN_URL)report" {
                         isMain = false
                     }else {
@@ -117,4 +127,14 @@ class ReportsVC: UIViewController , WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
           print("Error loading \(error)")
       }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+
+           if let currentURL = navigationAction.request.url?.absoluteString{
+                   print(currentURL)
+               
+           }
+
+           decisionHandler(.allow)
+       }
 }

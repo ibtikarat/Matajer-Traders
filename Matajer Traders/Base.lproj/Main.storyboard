@@ -10,14 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="DINNextLTArabic-Bold.ttf">
+        <array key="ArbFONTS-DINNextLTArabic-Bold-4.ttf">
             <string>DINNextLTArabic-Bold</string>
+        </array>
+        <array key="ArbFONTS-DINNextLTArabic-Regular-3.ttf">
+            <string>DINNextLTArabic-Regular</string>
         </array>
         <array key="DINNextLTArabic-Medium.ttf">
             <string>DINNextLTArabic-Medium</string>
-        </array>
-        <array key="DINNextLTArabic-Regular.ttf">
-            <string>DINNextLTArabic-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -2046,7 +2046,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التقارير" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Xx-iei">
-                                        <rect key="frame" x="186.5" y="63" width="41.5" height="19"/>
+                                        <rect key="frame" x="188" y="60.5" width="38.5" height="24"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>

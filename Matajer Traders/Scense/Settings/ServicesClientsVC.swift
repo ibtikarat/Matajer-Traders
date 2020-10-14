@@ -98,7 +98,7 @@ class ServicesClientsVC: UIViewController , WKNavigationDelegate {
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let currentURL = self.webView.url?.absoluteString{
-            print(currentURL)
+//            print(currentURL)
             if currentURL.contains("login"){
                 //  self.tabBarController?.tabBar.isHidden = true
             }else {
@@ -115,7 +115,7 @@ class ServicesClientsVC: UIViewController , WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
 
            if let currentURL = navigationAction.request.url?.absoluteString{
-                   print(currentURL)
+                 //  print(currentURL)
              
            }
 

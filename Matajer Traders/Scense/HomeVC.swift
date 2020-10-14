@@ -143,10 +143,11 @@ class HomeVC: UIViewController, WKNavigationDelegate {
                         
                         mainHeaderView.isHidden = true
                         subHeaderView.isHidden = false
+                        titleLbl.text =  webView.title
                     }else {
                         mainHeaderView.isHidden = false
                         subHeaderView.isHidden = true
-                        titleLbl.text =  webView.title
+                        
                     }
                     if currentURL.contains("storeLogin"){
                         loadPage()

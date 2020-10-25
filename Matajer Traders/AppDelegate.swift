@@ -69,7 +69,7 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
             }
             
         }
-        if userInfo["model"] as? String ?? "" == "userInfo" {
+        if userInfo["model"] as? String ?? "" == "info" || userInfo["model_name"] as? String ?? "" == "info" {
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUserInfo"), object: self, userInfo: nil)
         }

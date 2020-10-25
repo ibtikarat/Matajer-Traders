@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>535926557520-uuh96kunp60f49i7s1b11gd114on5mus.apps.googleusercontent.com</string>
+	<string>535926557520-v7uf3cdd7t7k16m06mggpaer8vhp7sqa.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.535926557520-uuh96kunp60f49i7s1b11gd114on5mus</string>
+	<string>com.googleusercontent.apps.535926557520-v7uf3cdd7t7k16m06mggpaer8vhp7sqa</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBI0oCxKbL9uO-hEz_Oa4_eBt5vbuDi4mQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,24 +13,26 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.matajer.cPanel</string>
+	<string>com.matajer.seller</string>
 	<key>PROJECT_ID</key>
 	<string>matajerapp-298fc</string>
 	<key>STORAGE_BUCKET</key>
 	<string>matajerapp-298fc.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:535926557520:ios:f3a6c05bc70909be3e7a55</string>
+	<string>1:535926557520:ios:8ae005787bdaad4d3e7a55</string>
 	<key>DATABASE_URL</key>
 	<string>https://matajerapp-298fc.firebaseio.com</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 </dict>
 </plist>

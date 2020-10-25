@@ -53,8 +53,8 @@
 		8367E5E2250F46D10091A538 /* ViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B6250F46D00091A538 /* ViewExtention.swift */; };
 		8367E5E4250F46D10091A538 /* MatajerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8367E5B9250F46D00091A538 /* MatajerUtility.swift */; };
 		836C1A80251CE15800D93018 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C1A7F251CE15800D93018 /* NotificationsVC.swift */; };
-		8370C1E7251BCF050021AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */; };
 		8376E469251B54D900A97604 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8376E46B251B54D900A97604 /* InfoPlist.strings */; };
+		837F35E025459DF60002CE31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 837F35DF25459DF60002CE31 /* GoogleService-Info.plist */; };
 		83922457251091A900E60E34 /* DINNextLTArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E592250F46D00091A538 /* DINNextLTArabic-Regular.ttf */; };
 		83922458251091AC00E60E34 /* DINNextLTArabic-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E591250F46D00091A538 /* DINNextLTArabic-Black.ttf */; };
 		83922459251091B000E60E34 /* DINNextLTArabic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8367E590250F46D00091A538 /* DINNextLTArabic-Heavy.ttf */; };
@@ -131,12 +131,12 @@
 		8367E5B6250F46D00091A538 /* ViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtention.swift; sourceTree = "<group>"; };
 		8367E5B9250F46D00091A538 /* MatajerUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatajerUtility.swift; sourceTree = "<group>"; };
 		836C1A7F251CE15800D93018 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
-		8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8370C1E8251BD2360021AF47 /* Matajer Trader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Matajer Trader.entitlements"; sourceTree = "<group>"; };
 		8376E46A251B54D900A97604 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8376E46C251B550500A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8376E46D251B550600A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		8376E46E251B550800A97604 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		837F35DF25459DF60002CE31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8392245E25109DDF00E60E34 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		8392246125109EB300E60E34 /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8392246325109EC300E60E34 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 				83653DC0252C644D00E8316F /* iPhone.css */,
 				8376E46B251B54D900A97604 /* InfoPlist.strings */,
 				8367E578250F36E50091A538 /* Matajer_Traders.xcdatamodeld */,
-				8370C1E6251BCF040021AF47 /* GoogleService-Info.plist */,
+				837F35DF25459DF60002CE31 /* GoogleService-Info.plist */,
 				831E1638251CA1C40059D6E3 /* custom_sound.caf */,
 				83634711250F8C7B00CF2317 /* Screens Core */,
 				83634718250F8C9000CF2317 /* Registration */,
@@ -448,12 +448,12 @@
 			files = (
 				835CEDFC252097CD001226E5 /* custom_sound.caf in Resources */,
 				8392245B251091B500E60E34 /* DINNextLTArabic-Bold.ttf in Resources */,
+				837F35E025459DF60002CE31 /* GoogleService-Info.plist in Resources */,
 				8392245D251091BA00E60E34 /* DINNextLTArabic-UltraLight.ttf in Resources */,
 				834FAC832511EBC7001AE1EA /* Registration.storyboard in Resources */,
 				8376E469251B54D900A97604 /* InfoPlist.strings in Resources */,
 				83653DC1252C644E00E8316F /* iPhone.css in Resources */,
 				8367E57F250F36E70091A538 /* LaunchScreen.storyboard in Resources */,
-				8370C1E7251BCF050021AF47 /* GoogleService-Info.plist in Resources */,
 				83922458251091AC00E60E34 /* DINNextLTArabic-Black.ttf in Resources */,
 				8367E57C250F36E70091A538 /* Assets.xcassets in Resources */,
 				8367E577250F36E40091A538 /* Main.storyboard in Resources */,
@@ -726,7 +726,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = matajer.seller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.seller;
 				PRODUCT_NAME = "Matajer Trader";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -749,7 +749,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = matajer.seller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.seller;
 				PRODUCT_NAME = "Matajer Trader";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -12,6 +12,7 @@ import WebKit
 final class WebCacheCleaner {
     
     class func clean() {
+        HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
         print("[WebCacheCleaner] All cookies deleted")
         

@@ -22,7 +22,7 @@ class orderDetailsVC: UIViewController , WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        WebCacheCleaner.clean()
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.alwaysBounceHorizontal = false

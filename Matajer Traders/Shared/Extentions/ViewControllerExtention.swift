@@ -423,9 +423,11 @@ extension UIViewController  {
         
         
         
-        func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        func checkMaxLength(textField: UITextField!, maxLength: Int) -> Bool {
             if (textField.text!.count > maxLength) {
-                textField.deleteBackward()
+                
+                return false
             }
+            return true
         }
 }

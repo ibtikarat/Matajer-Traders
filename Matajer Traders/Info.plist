@@ -28,6 +28,12 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>السماح للنطبيق باستخدام الكاميرا الخاصة بك لتحديد الصورة الخاصة بك</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>يحتاج تطبيق متاجر  السماح تحديد الموقع الخاص بك</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>يحتاج تطبيق متاجر  السماح تحديد الموقع الخاص بك</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>يحتاج تطبيق متاجر  السماح تحديد الموقع الخاص بك</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DINNextLTArabic-Regular.ttf</string>

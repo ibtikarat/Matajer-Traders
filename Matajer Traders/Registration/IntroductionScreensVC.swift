@@ -13,6 +13,7 @@ import IBAnimatable
 
 
 class IntroductionScreensVC: UIViewController {
+    @IBOutlet var bottomView1: UIView!
     @IBOutlet var bottimView: UIView!
     @IBOutlet var title1Lbl: UILabel!
     @IBOutlet var pageControl: UIPageControl!
@@ -44,12 +45,12 @@ class IntroductionScreensVC: UIViewController {
         }
         
         title1Lbl.text = "تجارتك بين يدك "
-        title2Lbl.text = "بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك"
+        title2Lbl.text = "بسطنا التجارة الإلكترونية و جعلناها بين يدك"
         bottimView.visibility = .invisible
+        bottomView1.visibility = .visible
         imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFit
         imageSlideShow.transform = CGAffineTransform(scaleX: -1, y: 1)
         imageSlideShow.pageIndicatorPosition = .init()
-        //.init(horizontal: .left(padding: 20), vertical: .customUnder(padding: 0))
        
         if #available(iOS 14.0, *) {
             imageSlideShow.pageIndicator = self.pageControl
@@ -85,6 +86,9 @@ class IntroductionScreensVC: UIViewController {
         self.signIn()
     }
     
+    @IBAction func skipAction(_ sender: Any) {
+        self.signIn()
+    }
     
 }
 
@@ -94,8 +98,9 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
         switch page {
         case 0:
             title1Lbl.text = "تجارتك بين يدك "
-            title2Lbl.text = "بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك "
+            title2Lbl.text = "بسطنا التجارة الإلكترونية و جعلناها بين يدك "
             bottimView.visibility = .invisible
+            bottomView1.visibility = .visible
             if #available(iOS 14.0, *) {
                 pageControl.setIndicatorImage(self.activeImage,
                                               forPage: 0)
@@ -108,8 +113,9 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
             }
         case 1:
             title1Lbl.text = "فعّل  خيارات الدفع بضغطة زر "
-            title2Lbl.text = "قدّم خيارات دفع أكثر  لعملائك  (  مدى , فيزا , ماستر , Apple Pay  ، تحويل بنكي ، الدفع عند الإستلام )"
+            title2Lbl.text = "قدّم خيارات دفع أكثر  لعملائك  (  مدى , ماستركارد, فيزا , Apple Pay  ، تحويل بنكي ، الدفع عند الإستلام )"
             bottimView.visibility = .invisible
+            bottomView1.visibility = .visible
             if #available(iOS 14.0, *) {
                 pageControl.setIndicatorImage(self.inactiveImage,
                                               forPage: 0)
@@ -124,6 +130,7 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
             title1Lbl.text = "فعّل  خيارات الشحن  بضغطة زر "
             title2Lbl.text = "خيارات شحن متنوعة لجعل منتجاتك تصل لعميلك بسهول ( سمسا ، ارامكس ، البريد السعودي ، طريقة  شحن خاصة )"
             bottimView.visibility = .invisible
+            bottomView1.visibility = .visible
             if #available(iOS 14.0, *) {
                 pageControl.setIndicatorImage(self.activeImage,
                                               forPage: 2)
@@ -139,6 +146,7 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
             title1Lbl.text = "متابعة طلبات عملائك "
             title2Lbl.text = "تابع طلبات عملائك و قم بإستقبال الاشعارات للطلبات الجديدة"
             bottimView.visibility = .visible
+            bottomView1.visibility = .invisible
             if #available(iOS 14.0, *) {
                 pageControl.setIndicatorImage(self.activeImage,
                                               forPage: 3)
@@ -152,7 +160,7 @@ extension IntroductionScreensVC: ImageSlideshowDelegate
             
         default:
             title1Lbl.text = "تجارتك بين يدك "
-            title2Lbl.text = "بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك "
+            title2Lbl.text = "بسطنا التجارة الإلكترونية و جعلناها بين يدك "
             bottimView.visibility = .invisible
         }
         

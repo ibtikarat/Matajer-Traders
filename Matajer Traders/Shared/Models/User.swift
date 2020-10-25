@@ -30,6 +30,7 @@ class User :Codable
     
     
     
+    
     enum CodingKeys: String, CodingKey {
         case allowNotifi = "allow_notifi"
         case apiToken = "api_token"
@@ -110,6 +111,7 @@ class StoreData : Codable {
     let matajerSupportWhatsapp:Int?
     let is_paid_subscription:Int?
     let ios_popup_topic:String?
+    let is_partners_services_enabled:Int?
     
     enum CodingKeys: String, CodingKey {
         case appStore = "appStore"
@@ -126,6 +128,7 @@ class StoreData : Codable {
         case matajerSupportWhatsapp = "matajerSupportWhatsapp"
         case is_paid_subscription = "is_paid_subscription"
         case ios_popup_topic = "ios_popup_topic"
+        case is_partners_services_enabled = "is_partners_services_enabled"
     }
     
     required init(from decoder: Decoder) throws {
@@ -144,6 +147,7 @@ class StoreData : Codable {
         matajerSupportWhatsapp = try values.decodeIfPresent(Int.self, forKey: .matajerSupportWhatsapp)
         is_paid_subscription = try values.decodeIfPresent(Int.self, forKey: .is_paid_subscription)
         ios_popup_topic = try values.decodeIfPresent(String.self, forKey: .ios_popup_topic)
+        is_partners_services_enabled = try values.decodeIfPresent(Int.self, forKey: .is_partners_services_enabled)
     }
     
 }

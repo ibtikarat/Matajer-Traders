@@ -23,10 +23,25 @@ class RegisterVC: UIViewController {
     @IBOutlet var mobileView: AnimatableView!
     @IBOutlet var nameView: AnimatableView!
     
+    var name:String?
+    var mobile:String?
+    var email:String?
+    var password:String?
+    var valid_email:Bool?
+    var valid_mobile:Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.isHidden = true
      
+     
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        emailTF.text = email ?? ""
+        nameTF.text = name ?? ""
+        passwordTF.text = password ?? ""
+        mobileTF.text = mobile ?? ""
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -62,6 +77,10 @@ class RegisterVC: UIViewController {
         vc.email = emailTF.text
         vc.password = passwordTF.text
         vc.mobile = mobileTF.text
+        name  = nameTF.text
+        email = emailTF.text
+        password = passwordTF.text
+        mobile =  mobileTF.text
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.loader.isHidden = true
             self.loader.stopAnimating()
@@ -108,7 +127,13 @@ class RegisterVC: UIViewController {
         }
         if passwordTF.text!.count < 6 {
             
-            return .invalid("مطلوب 6 خانات على الأقل")
+          
+        }
+        if !(valid_email ?? false ){
+            return .invalid("البريد الإلكتروني مسجل مسبقاً")
+            }
+        if !(valid_mobile ?? false) {
+            return .invalid("رقم الجوال مسجل مسبقاً")
         }
         return .valid
     }
@@ -124,6 +149,7 @@ extension RegisterVC : UITextFieldDelegate {
         case emailTF:
             emailView.borderColor = Constants.PrimaryColor
             emailView.borderWidth = 1
+            
         case passwordTF:
             passwordView.borderColor = Constants.PrimaryColor
             passwordView.borderWidth = 1
@@ -145,12 +171,21 @@ extension RegisterVC : UITextFieldDelegate {
         case emailTF:
             emailView.borderColor = .clear
             emailView.borderWidth = 0
+            email  = emailTF.text
+            if emailTF.text!.isEmailValid  {
+               checkEmailMobile(value: email ?? "")
+            }
         case passwordTF:
             passwordView.borderColor = .clear
             passwordView.borderWidth = 0
+            
         case mobileTF:
             mobileView.borderColor = .clear
             mobileView.borderWidth = 0
+            mobile =  mobileTF.text
+            if mobileTF.text!.ValidateMobileNumber() {
+               checkEmailMobile(value: mobile ?? "")
+            }
         case nameTF:
             nameView.borderColor = .clear
             nameView.borderWidth = 0
@@ -165,12 +200,20 @@ extension RegisterVC : UITextFieldDelegate {
         case emailTF:
             emailView.borderColor = .clear
             emailView.borderWidth = 0
+            email  = emailTF.text
+            if emailTF.text!.isEmailValid  {
+               checkEmailMobile(value: email ?? "")
+            }
         case passwordTF:
             passwordView.borderColor = .clear
             passwordView.borderWidth = 0
         case mobileTF:
             mobileView.borderColor = .clear
             mobileView.borderWidth = 0
+            mobile =  mobileTF.text
+            if mobileTF.text!.ValidateMobileNumber() {
+              checkEmailMobile(value: mobile ?? "")
+            }
         case nameTF:
             nameView.borderColor = .clear
             nameView.borderWidth = 0
@@ -185,8 +228,14 @@ extension RegisterVC : UITextFieldDelegate {
         switch textField {
             
         case mobileTF:
-            checkMaxLength(textField: mobileTF, maxLength: 9)
             
+            if let char = string.cString(using: String.Encoding.utf8) {
+                let isBackSpace = strcmp(char, "\\b")
+                if (isBackSpace == -92) {
+                return true
+                }
+            }
+           return  checkMaxLength(textField: mobileTF, maxLength: 9)
             
             
         default:
@@ -195,4 +244,38 @@ extension RegisterVC : UITextFieldDelegate {
         
         return true
     }
+    
+
+    
+    func checkEmailMobile(value:String) {
+        
+        
+        var params = [String:String]()
+        params["txt"] = value
+        API.CHECK_MOBILE_EMAIL.startRequest(showIndicator: false, params: params) { (Api,response) in
+            if response.isSuccess {
+                if value.isEmailValid {
+                   
+                    self.valid_email = true
+                } else if value.ValidateMobileNumber() {
+                   
+                    self.valid_mobile = true
+                }
+                
+            }else{
+                if value.isEmailValid {
+                    self.showBunnerAlert(title: "", message:"البريد الإلكتروني مسجل مسبقاً")
+                    self.valid_email = false
+                } else if value.ValidateMobileNumber() {
+                    self.showBunnerAlert(title: "", message: "رقم الجوال مسجل مسبقاً")
+                    self.valid_mobile = false
+                }
+               
+             
+
+            }
+        }
+       
+    }
+    
 }

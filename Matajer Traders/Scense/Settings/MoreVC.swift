@@ -16,6 +16,9 @@ import IBAnimatable
 class MoreVC: UIViewController , WKNavigationDelegate {
     
     
+    @IBOutlet var previewView2: UIView!
+    @IBOutlet var row2ImgV: UIImageView!
+    @IBOutlet var marketingStack: UIStackView!
     @IBOutlet var appleView: UIView!
     @IBOutlet var androidView: UIView!
     @IBOutlet var row_imgV: UIImageView!
@@ -24,6 +27,7 @@ class MoreVC: UIViewController , WKNavigationDelegate {
     @IBOutlet var userName: UIButton!
     @IBOutlet var userImgV: UIImageView!
     @IBOutlet var menueStackView: UIStackView!
+    @IBOutlet var clientsServicesView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +37,18 @@ class MoreVC: UIViewController , WKNavigationDelegate {
         }else {
             appleView.isHidden = true
         }
+        if MatajerUtility.loadUser()?.storeData?.is_partners_services_enabled == 1 {
+            clientsServicesView.isHidden = false
+        }else {
+            clientsServicesView.isHidden = true
+        }
         if MatajerUtility.loadUser()?.storeData?.googlePlay?.count  ?? 0 > 1 {
             androidView.isHidden = false
         }else {
             androidView.isHidden = true
         }
         row_imgV.image = Constants.row_down
+        row2ImgV.image = Constants.row_down
         userImgV.fetchingImage(url:  MatajerUtility.loadUser()?.storeData?.logo ?? "")
         userName.setTitle(MatajerUtility.loadUser()?.storeData?.nameAr ?? "", for: .normal)
         if MatajerUtility.loadUser()?.notificationAlarm ?? 0 > 0 {
@@ -88,7 +98,9 @@ class MoreVC: UIViewController , WKNavigationDelegate {
         routeNoifications()
     }
     @IBAction func goToSettingsAction(_ sender: Any) {
-        self.routeSettings()
+       // self.routeSettings()
+    }
+    @IBAction func goToCopuns(_ sender: Any) {
     }
     
     
@@ -157,6 +169,25 @@ class MoreVC: UIViewController , WKNavigationDelegate {
         
     }
     
+    @IBAction func routeMarketingAction(_ sender: Any) {
+        if row2ImgV.image == Constants.row_down {
+            row2ImgV.image = Constants.row_up
+            previewView2.backgroundColor = Constants.LightPrimaryColor
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                self?.view.layoutIfNeeded()
+                self?.marketingStack.isHidden = false
+            }
+            
+        }else{
+            row2ImgV.image = Constants.row_down
+            previewView2.backgroundColor = .clear
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                self?.view.layoutIfNeeded()
+                self?.marketingStack.isHidden = true
+            }
+            
+        }
+    }
     @IBAction func logoutAction(_ sender: Any) {
         self.singOut()
     }

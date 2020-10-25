@@ -14,11 +14,13 @@ import SVProgressHUD
 class NotificationsVC: UIViewController , WKNavigationDelegate {
     
     @IBOutlet var webView: WKWebView!
+    @IBOutlet var titleLbl: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        WebCacheCleaner.clean()
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.alwaysBounceHorizontal = false
@@ -77,6 +79,7 @@ class NotificationsVC: UIViewController , WKNavigationDelegate {
                 SVProgressHUD.dismiss()
                 if let currentURL = self.webView.url?.absoluteString{
                     print(currentURL)
+                    titleLbl.text =  webView.title
                     if currentURL.contains("storeLogin"){
                         loadPage()
                         

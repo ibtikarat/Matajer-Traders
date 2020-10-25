@@ -211,7 +211,13 @@ extension LoginVC : UITextFieldDelegate {
         case mobileEmailTF:
             let num = Int(mobileEmailTF.text ?? "")
             if num != nil {
-                checkMaxLength(textField: mobileEmailTF, maxLength: 9)
+                if let char = string.cString(using: String.Encoding.utf8) {
+                    let isBackSpace = strcmp(char, "\\b")
+                    if (isBackSpace == -92) {
+                    return true
+                    }
+                }
+             return   checkMaxLength(textField: mobileEmailTF, maxLength: 9)
             }
            
         default:

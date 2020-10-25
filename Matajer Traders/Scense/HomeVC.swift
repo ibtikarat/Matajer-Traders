@@ -10,11 +10,12 @@ import UIKit
 import WebKit
 import Alamofire
 import IBAnimatable
-
+import QuickLook
 import SDWebImage
 
-class HomeVC: UIViewController, WKNavigationDelegate {
+class HomeVC: UIViewController, WKNavigationDelegate ,QLPreviewControllerDataSource{
     
+    @IBOutlet var printBtn: UIButton!
     @IBOutlet var mainHeaderView: AnimatableView!
     @IBOutlet var subHeaderView: AnimatableView!
     @IBOutlet var noti_count_lbl: AnimatableLabel!
@@ -23,9 +24,17 @@ class HomeVC: UIViewController, WKNavigationDelegate {
     @IBOutlet var titleLbl: UILabel!
     
     
+    var documentPreviewController = QLPreviewController()
+    var documentUrl = URL(fileURLWithPath: "")
+    var webViewCookieStore: WKHTTPCookieStore!
+    let webViewConfiguration = WKWebViewConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        WebCacheCleaner.clean()
+        webViewConfiguration.websiteDataStore = WKWebsiteDataStore.default()
+        documentPreviewController.dataSource  = self
+        webViewCookieStore = webView.configuration.websiteDataStore.httpCookieStore
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.alwaysBounceHorizontal = false
@@ -95,7 +104,7 @@ class HomeVC: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func goToSettingsAction(_ sender: Any) {
-        self.routeSettings()
+        //self.routeSettings()
     }
     
     
@@ -124,14 +133,14 @@ class HomeVC: UIViewController, WKNavigationDelegate {
     @objc
     func refreshWebView(_ sender: UIRefreshControl) {
         webView.reload()
-        
         sender.endRefreshing()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if keyPath == "estimatedProgress" {
-            Float(self.webView.estimatedProgress);
+            self.printBtn.isHidden = true
+           
             if self.webView.estimatedProgress != 1 {
                 self.showIndicator()
                 
@@ -139,6 +148,22 @@ class HomeVC: UIViewController, WKNavigationDelegate {
                 self.hideIndicator()
                 if let currentURL = self.webView.url?.absoluteString{
                     print(currentURL)
+                    webView.evaluateJavaScript("document.getElementsByName('printIt')[0].getAttribute('content')") { [self] (result, error) -> Void in
+                        if error != nil {
+                            print(error?.localizedDescription)
+                            
+                        }else {
+                            print(result.debugDescription)
+                            let link = "\( result!)"
+                            print("\(link)")
+                            self.documentUrl =  URL(string: link)!
+                            print(" documentUrl  \(self.documentUrl)")
+                            if   ( self.documentUrl.description.contains("/pdf/") ){
+                                self.printBtn.isHidden = false
+                            }
+                        }
+                    }
+                    
                     if currentURL.description != "\(API.DOMAIN_URL)home" {
                         
                         mainHeaderView.isHidden = true
@@ -160,31 +185,72 @@ class HomeVC: UIViewController, WKNavigationDelegate {
             
         }
     }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let currentURL = self.webView.url?.absoluteString{
-            print(currentURL)
-            if currentURL.contains("login"){
-                //  self.tabBarController?.tabBar.isHidden = true
-            }else {
-                
-                //self.tabBarController?.tabBar.isHidden = false
-            }
-        }
+
+    @IBAction func printAction(_ sender: Any) {
         
+        loadAndDisplayDocumentFrom(url: self.documentUrl)
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("Error loading \(error)")
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
-
-        if let currentURL = navigationAction.request.url?.absoluteString{
-                print(currentURL)
+    /*
+     Download the file from the given url and store it locally in the app's temp folder.
+     The stored file is then opened using QuickLook preview.
+     */
+    private func loadAndDisplayDocumentFrom(url downloadUrl : URL) {
+        let localFileURL = FileManager.default.temporaryDirectory.appendingPathComponent(downloadUrl.lastPathComponent)
+        
+        self.showIndicator()
+        
+        // getAllCookies needs to be called in main thread??? (https://medium.com/appssemble/wkwebview-and-wkcookiestore-in-ios-11-5b423e0829f8)
+        //??? needed?? DispatchQueue.main.async {
+        self.webViewCookieStore.getAllCookies { (cookies) in
+            for cookie in cookies {
+                if cookie.domain.range(of: "my.domain.xyz") != nil {
+                    HTTPCookieStorage.shared.setCookie(cookie)
+                    debugPrint("Sync cookie [\(cookie.domain)] \(cookie.name)=\(cookie.value)")
+                } else {
+                    debugPrint("Skip cookie [\(cookie.domain)] \(cookie.name)=\(cookie.value)")
+                }
+            }
+            debugPrint("FINISHED COOKIE SYNC")
+            
+            debugPrint("Downloading document from url=\(downloadUrl.absoluteString)")
+            URLSession.shared.dataTask(with: downloadUrl) { data, response, err in
+                guard let data = data, err == nil else {
+                    debugPrint("Error while downloading document from url=\(downloadUrl.absoluteString): \(err.debugDescription)")
+                    return
+                }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    debugPrint("Download http status=\(httpResponse.statusCode)")
+                }
+                
+                // write the downloaded data to a temporary folder
+                do {
+                    try data.write(to: localFileURL, options: .atomic)   // atomic option overwrites it if needed
+                    debugPrint("Stored document from url=\(downloadUrl.absoluteString) in folder=\(localFileURL.absoluteString)")
+                    self.hideIndicator()
+                    DispatchQueue.main.async {
+                        self.documentUrl = localFileURL
+                        self.documentPreviewController.refreshCurrentPreviewItem()
+                        self.present(self.documentPreviewController, animated: true, completion: nil)
+                    }
+                } catch {
+                    self.hideIndicator()
+                    debugPrint(error)
+                    return
+                }
+            }.resume()
         }
-
-        decisionHandler(.allow)
     }
     
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        return documentUrl as QLPreviewItem
+    }
+    
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
     
 }

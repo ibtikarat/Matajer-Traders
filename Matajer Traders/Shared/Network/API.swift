@@ -17,7 +17,7 @@ enum API {
     private  static let TAG = "API - Service "
     
     
-    static let DOMAIN_URL = "https://matajerapp.dev/api/merchant/v1/";
+    static let DOMAIN_URL = "https://mapp.sa/api/merchant/v1/";
     static let FIREBASE_SUBSCRIBE_iosArTopic = "merchantapp";
      static let FIREBASE_SUBSCRIBE_iosTopic = "iosMerchantAppPopup";
     
@@ -30,6 +30,7 @@ enum API {
 
     //auth
     case CHECK_LINK
+    case CHECK_MOBILE_EMAIL
     case LOGIN
     case REGISTER
     case FORGET
@@ -72,6 +73,9 @@ enum API {
                 
             case .HOME:
                 return (API.DOMAIN_URL + "home",.get,nil)
+                
+            case .CHECK_MOBILE_EMAIL:
+                return (API.DOMAIN_URL + "checkEmailOrMobile",.post,nil)
                 
             }
         }

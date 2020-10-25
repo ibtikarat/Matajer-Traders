@@ -68,8 +68,8 @@ class Register2VC: UIViewController {
             
         }
         DropDown.dataSource = ["محركات  البحث",
-                               "إنستجرام",
-                               "واتس أب",
+                               "انستقرام",
+                               "واتساب",
                                "سناب شات",
                                "تويتر",
                                "يوتيوب",
@@ -83,11 +83,11 @@ class Register2VC: UIViewController {
                 self?.source = "search_engines"
                 self?.otherView.visibility = .gone
             case 1:
-                self?.sourceRegistrationTF.text = "إنستجرام"
+                self?.sourceRegistrationTF.text = "انستقرام"
                 self?.source = "instagram"
                 self?.otherView.visibility = .gone
             case 2:
-                self?.sourceRegistrationTF.text = "واتس أب"
+                self?.sourceRegistrationTF.text = "واتساب"
                 self?.source = "whatsapp"
                 self?.otherView.visibility = .gone
             case 3:
@@ -170,10 +170,10 @@ class Register2VC: UIViewController {
         
         if sourceRegistrationTF.text!.isEmpty {
             
-            return .invalid("الرجاء اختيار طريقة سماعك عن متاجر")
+            return .invalid("الرجاء إختيار كيف سمعت عن متاجر")
         }
         if source == "other" &&  otherTF.text!.isEmpty {
-            return .invalid("الرجاء أضافة طريقة معرفتك بمتاجر")
+            return .invalid("الرجاء إختيار كيف سمعت عن متاجر")
         }
         
         

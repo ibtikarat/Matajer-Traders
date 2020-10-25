@@ -11,6 +11,7 @@ import CoreData
 import MOLH
 import IQKeyboardManagerSwift
 import Firebase
+import Sentry
 
 
 @UIApplicationMain
@@ -25,6 +26,10 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
         IQKeyboardManager.shared.enable = true
         initLanguage()
         MOLH.setLanguageTo("ar")
+        SentrySDK.start { options in
+              options.dsn = "https://4869c09cf6a64f0f9002fafdfea11dd3@o461548.ingest.sentry.io/5463474"
+              options.debug = true // Enabled debug when first installing is always helpful
+          }
         return true
     }
     

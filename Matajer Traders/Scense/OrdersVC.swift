@@ -27,19 +27,15 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
     @IBOutlet var titleLbl: UILabel!
     
     
-    var current_url:URL =  URL(string:API.DOMAIN_URL + "order")!
-    
     var documentPreviewController = QLPreviewController()
-       var documentUrl = URL(fileURLWithPath: "")
-       
-       
-       var webViewCookieStore: WKHTTPCookieStore!
-       let webViewConfiguration = WKWebViewConfiguration()
+    var documentUrl = URL(fileURLWithPath: "")
+    var webViewCookieStore: WKHTTPCookieStore!
+    let webViewConfiguration = WKWebViewConfiguration()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        WebCacheCleaner.clean()
         webViewConfiguration.websiteDataStore = WKWebsiteDataStore.default()
         documentPreviewController.dataSource  = self
         webViewCookieStore = webView.configuration.websiteDataStore.httpCookieStore
@@ -106,53 +102,7 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
         }
     }
     
-    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        debugPrint("did receive message \(message.name)")
-
-
-        if (message.name == "openDocument") {
-            previewDocument(messageBody: message.body as! String)
-        } else if (message.name == "jsError") {
-            debugPrint(message.body as! String)
-        }
-    }
-    
-    private func previewDocument(messageBody: String) {
-          // messageBody is in the format ;data:;base64,
-          
-          // split on the first ";", to reveal the filename
-          let filenameSplits = messageBody.split(separator: ";", maxSplits: 1, omittingEmptySubsequences: false)
-          
-          let filename = String(filenameSplits[0])
-          
-          // split the remaining part on the first ",", to reveal the base64 data
-          let dataSplits = filenameSplits[1].split(separator: ",", maxSplits: 1, omittingEmptySubsequences: false)
-          
-          let data = Data(base64Encoded: String(dataSplits[1]))
-          
-          if (data == nil) {
-              debugPrint("Could not construct data from base64")
-              return
-          }
-          
-          // store the file on disk (.removingPercentEncoding removes possible URL encoded characters like "%20" for blank)
-          let localFileURL = FileManager.default.temporaryDirectory.appendingPathComponent(filename.removingPercentEncoding ?? filename)
-          
-          do {
-              try data!.write(to: localFileURL);
-          } catch {
-              debugPrint(error)
-              return
-          }
-          
-          // and display it in QL
-          DispatchQueue.main.async {
-              self.documentUrl = localFileURL
-              self.documentPreviewController.refreshCurrentPreviewItem()
-              self.present(self.documentPreviewController, animated: true, completion: nil)
-          }
-      }
-    
+  
     func loadPage(){
         
         var urlRequest = URLRequest(url: URL(string:API.DOMAIN_URL + "order")!)
@@ -184,7 +134,7 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
     
     
     @IBAction func goToSettingsAction(_ sender: Any) {
-        self.routeSettings()
+       // self.routeSettings()
     }
     
     
@@ -198,23 +148,27 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if keyPath == "estimatedProgress" {
-            
+            self.printBtn.isHidden = true
             if self.webView.estimatedProgress != 1 {
                 self.showIndicator()
                 
             }else {
                 self.hideIndicator()
                 if let currentURL = self.webView.url?.absoluteString{
-                    self.current_url = self.webView.url!
-                    webView.evaluateJavaScript("document.getElementsByName('printInvoice')[0].getAttribute('content')") { [self] (result, error) -> Void in
+                    
+                    webView.evaluateJavaScript("document.getElementsByName('printIt')[0].getAttribute('content')") { [self] (result, error) -> Void in
                         if error != nil {
                             print(error?.localizedDescription)
+                            
                         }else {
                             print(result.debugDescription)
-                  let link = "\( result!)"
+                            let link = "\( result!)"
                             print("\(link)")
                             self.documentUrl =  URL(string: link)!
                             print(" documentUrl  \(self.documentUrl)")
+                            if   ( self.documentUrl.description.contains("/pdf/") ){
+                                self.printBtn.isHidden = false
+                            }
                         }
                     }
                     
@@ -223,11 +177,7 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
                         mainHeaderView.isHidden = true
                         subHeaderView.isHidden = false
                         titleLbl.text =  webView.title
-                        if   (currentURL.contains("show") ){
-                            self.printBtn.isHidden = false
-                        }else {
-                            self.printBtn.isHidden = true
-                        }
+                        
                     }else {
                         mainHeaderView.isHidden = false
                         subHeaderView.isHidden = true
@@ -241,32 +191,13 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
                     }                }
             }
             
-           
+            
         }
     }
-
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if let currentURL = self.webView.url?.absoluteString{
-            print(currentURL)
-           
-          
-            if currentURL.contains("login"){
-                //  self.tabBarController?.tabBar.isHidden = true
-            }else {
-                
-                // self.tabBarController?.tabBar.isHidden = false
-            }
-        }
-        
-    }
     
-
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print("Error loading \(error)")
-    }
     @IBAction func printAction(_ sender: Any) {
-       
+        
         loadAndDisplayDocumentFrom(url: self.documentUrl)
     }
     
@@ -332,6 +263,6 @@ class OrdersVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDat
         return 1
     }
     
- 
+    
     
 }

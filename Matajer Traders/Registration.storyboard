@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="-1" width="414" height="863"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-CH-b9Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="729"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITy-7D-5WI" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="485"/>
@@ -59,17 +59,17 @@
                                                 <color key="textColor" name="black_color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بسطنا التجارة الإلكترونية للتاجر و جعلناها بين يدك " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-f4-Aca">
-                                                <rect key="frame" x="30" y="545" width="354" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بسطنا التجارة الإلكترونية و جعلناها بين يدك " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-f4-Aca">
+                                                <rect key="frame" x="30" y="545" width="354" height="24"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                                 <color key="textColor" name="gray_color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcL-6T-InS">
-                                                <rect key="frame" x="30" y="574" width="354" height="140"/>
+                                                <rect key="frame" x="30" y="579" width="354" height="140"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-BJ-wfm">
-                                                        <rect key="frame" x="154.5" y="90" width="125" height="30"/>
+                                                        <rect key="frame" x="149.5" y="90" width="135" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="zlk-dR-JtD"/>
                                                         </constraints>
@@ -79,7 +79,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-wT-daC" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="284.5" y="90" width="68" height="30"/>
+                                                        <rect key="frame" x="289.5" y="90" width="76" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="vQF-Ke-lvy"/>
                                                         </constraints>
@@ -123,6 +123,38 @@
                                                     <constraint firstItem="7zJ-BJ-wfm" firstAttribute="centerX" secondItem="gcL-6T-InS" secondAttribute="centerX" constant="40" id="zXa-U2-jWD"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJg-HZ-3fX">
+                                                <rect key="frame" x="32" y="579" width="352" height="140"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dee-gY-0Ep">
+                                                        <rect key="frame" x="155.5" y="15" width="41" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="zy9-Fa-7GU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="17"/>
+                                                        <state key="normal" title="تخطي">
+                                                            <color key="titleColor" name="primary_color"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="skipAction:" destination="XnB-bl-WdR" eventType="touchUpInside" id="aQY-GF-jDZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="row-left" translatesAutoresizingMaskIntoConstraints="NO" id="6HX-eb-gJC">
+                                                        <rect key="frame" x="206" y="23" width="15" height="15"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="14" id="EgG-Mz-wxQ"/>
+                                                            <constraint firstAttribute="height" constant="14" id="TGf-pP-8jM"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="6HX-eb-gJC" firstAttribute="leading" secondItem="dee-gY-0Ep" secondAttribute="trailing" constant="3" id="QHs-bX-W4b"/>
+                                                    <constraint firstItem="dee-gY-0Ep" firstAttribute="centerY" secondItem="lJg-HZ-3fX" secondAttribute="centerY" constant="-40" id="Ui9-kk-Y27"/>
+                                                    <constraint firstItem="6HX-eb-gJC" firstAttribute="centerY" secondItem="dee-gY-0Ep" secondAttribute="centerY" constant="2" id="UxW-Lw-K09"/>
+                                                    <constraint firstItem="dee-gY-0Ep" firstAttribute="centerX" secondItem="lJg-HZ-3fX" secondAttribute="centerX" id="gHx-6A-nOo"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -134,8 +166,12 @@
                                             <constraint firstItem="t9a-is-Xr8" firstAttribute="top" secondItem="ITy-7D-5WI" secondAttribute="bottom" constant="20" id="ZcF-su-rDK"/>
                                             <constraint firstItem="F2x-f4-Aca" firstAttribute="top" secondItem="t9a-is-Xr8" secondAttribute="bottom" constant="15" id="bQM-5L-mw0"/>
                                             <constraint firstItem="F2x-f4-Aca" firstAttribute="trailing" secondItem="t9a-is-Xr8" secondAttribute="trailing" id="cbv-pb-0oB"/>
+                                            <constraint firstItem="lJg-HZ-3fX" firstAttribute="trailing" secondItem="gcL-6T-InS" secondAttribute="trailing" id="dbF-tm-Iag"/>
+                                            <constraint firstItem="lJg-HZ-3fX" firstAttribute="bottom" secondItem="gcL-6T-InS" secondAttribute="bottom" id="hJZ-Yy-jJo"/>
+                                            <constraint firstItem="lJg-HZ-3fX" firstAttribute="leading" secondItem="gcL-6T-InS" secondAttribute="leading" constant="2" id="jPO-Gm-gbL"/>
                                             <constraint firstAttribute="bottom" secondItem="gcL-6T-InS" secondAttribute="bottom" constant="10" id="kOS-BT-I1e"/>
                                             <constraint firstItem="ITy-7D-5WI" firstAttribute="top" secondItem="wF3-CH-b9Z" secondAttribute="top" id="mM2-gK-4DA"/>
+                                            <constraint firstItem="lJg-HZ-3fX" firstAttribute="top" secondItem="gcL-6T-InS" secondAttribute="top" id="ov9-LY-sjS"/>
                                             <constraint firstItem="gcL-6T-InS" firstAttribute="top" secondItem="F2x-f4-Aca" secondAttribute="bottom" constant="10" id="p7y-eT-sfA"/>
                                             <constraint firstItem="ITy-7D-5WI" firstAttribute="leading" secondItem="wF3-CH-b9Z" secondAttribute="leading" id="qjQ-qO-zY5"/>
                                             <constraint firstItem="gcL-6T-InS" firstAttribute="trailing" secondItem="F2x-f4-Aca" secondAttribute="trailing" id="ze4-ZI-tFe"/>
@@ -165,6 +201,7 @@
                     </view>
                     <connections>
                         <outlet property="bottimView" destination="gcL-6T-InS" id="2NZ-0a-bME"/>
+                        <outlet property="bottomView1" destination="lJg-HZ-3fX" id="qxx-5O-z0A"/>
                         <outlet property="imageSlideShow" destination="ITy-7D-5WI" id="sil-xP-GW9"/>
                         <outlet property="pageControl" destination="fPb-Lb-6Vd" id="U1o-YU-fac"/>
                         <outlet property="startTradeBtn" destination="mHQ-Iu-S6g" id="BFc-dY-5gx"/>
@@ -185,7 +222,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03l-tA-lXb" userLabel="Empty View">
-                                <rect key="frame" x="0.0" y="177" width="414" height="452"/>
+                                <rect key="frame" x="0.0" y="169" width="414" height="468"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_no_internet" translatesAutoresizingMaskIntoConstraints="NO" id="IHH-yM-ikO">
                                         <rect key="frame" x="30.5" y="0.0" width="353" height="285"/>
@@ -194,13 +231,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقطع الاتصال!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6id-ps-aZn">
-                                        <rect key="frame" x="142.5" y="301" width="129" height="28"/>
+                                        <rect key="frame" x="137.5" y="301" width="139" height="35.5"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Medium" family="DIN Next LT Arabic" pointSize="24"/>
                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-8m-UFM">
-                                        <rect key="frame" x="127" y="339" width="160.5" height="33"/>
+                                        <rect key="frame" x="126.5" y="346.5" width="161" height="41.5"/>
                                         <string key="text">لا يوجد أي اتصال بالإنترنت حالياً
 تأكد من اتصال الجوال بالإنترنت</string>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="14"/>
@@ -208,7 +245,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-Ob-G7M" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="80" y="402" width="254" height="50"/>
+                                        <rect key="frame" x="80" y="418" width="254" height="50"/>
                                         <color key="backgroundColor" name="blackColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5FP-wF-015"/>
@@ -271,13 +308,13 @@
                                 <rect key="frame" x="0.0" y="119" width="414" height="777"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-6D-Hbd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B1-FO-TQX" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="200" width="366" height="56"/>
+                                                <rect key="frame" x="24" y="205" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="رقم الجوال / البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXq-Jv-lp2">
-                                                        <rect key="frame" x="24.5" y="18" width="321.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="321.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -306,10 +343,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-ri-BLu" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="268" width="366" height="56"/>
+                                                <rect key="frame" x="24" y="273" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qma-ay-2kB">
-                                                        <rect key="frame" x="24.5" y="18.5" width="311.5" height="19"/>
+                                                        <rect key="frame" x="24.5" y="16" width="311.5" height="24"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -351,7 +388,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc2-7f-3Cl">
-                                                <rect key="frame" x="297" y="344" width="93" height="30"/>
+                                                <rect key="frame" x="281" y="349" width="109" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="3XO-Jh-jZy"/>
                                                 </constraints>
@@ -364,10 +401,10 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTB-a8-Tkn">
-                                                <rect key="frame" x="101" y="524" width="212" height="30"/>
+                                                <rect key="frame" x="92.5" y="529" width="229" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnV-ri-PnW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="zOk-dB-P6G"/>
                                                         </constraints>
@@ -377,7 +414,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yt4-Sn-wJM" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="151" y="0.0" width="61" height="30"/>
+                                                        <rect key="frame" x="164" y="0.0" width="65" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="GeG-6v-xYC"/>
                                                         </constraints>
@@ -392,14 +429,14 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-OK-LPs" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="404" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="409" width="366" height="50"/>
                                                 <color key="backgroundColor" name="primary_color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ejc-2M-DP1"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="DINNextLTArabic-Medium" family="DIN Next LT Arabic" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="ابدأ الآن"/>
+                                                <state key="normal" title="تسجيل الدخول"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="25"/>
@@ -410,13 +447,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kt7-e7-tLK">
-                                                <rect key="frame" x="163.5" y="135" width="87" height="20"/>
+                                                <rect key="frame" x="159.5" y="135" width="95.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTArabic-Medium" family="DIN Next LT Arabic" pointSize="17"/>
                                                 <color key="textColor" name="primary_color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3rB-zT-uVw">
-                                                <rect key="frame" x="124" y="409" width="40" height="40"/>
+                                                <rect key="frame" x="94" y="414" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="9qu-10-ZPB"/>
                                                     <constraint firstAttribute="width" constant="40" id="uLy-7E-RE0"/>
@@ -435,7 +472,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0B1-FO-TQX" secondAttribute="trailing" constant="24" id="5jK-Qs-ozZ"/>
                                             <constraint firstItem="BTB-a8-Tkn" firstAttribute="top" secondItem="L9f-OK-LPs" secondAttribute="bottom" constant="70" id="6Ul-Lj-Wk6"/>
-                                            <constraint firstItem="3rB-zT-uVw" firstAttribute="leading" secondItem="L9f-OK-LPs" secondAttribute="leading" constant="100" id="BuX-Kj-dwu"/>
+                                            <constraint firstItem="3rB-zT-uVw" firstAttribute="leading" secondItem="L9f-OK-LPs" secondAttribute="leading" constant="70" id="BuX-Kj-dwu"/>
                                             <constraint firstItem="lc2-7f-3Cl" firstAttribute="trailing" secondItem="L9f-OK-LPs" secondAttribute="trailing" id="D8c-1b-UIE"/>
                                             <constraint firstItem="BTB-a8-Tkn" firstAttribute="centerX" secondItem="Rht-6D-Hbd" secondAttribute="centerX" id="KdB-XT-jwn"/>
                                             <constraint firstItem="RI9-iP-1Q6" firstAttribute="centerX" secondItem="Rht-6D-Hbd" secondAttribute="centerX" id="NjE-4H-NUm"/>
@@ -527,7 +564,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="707"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبدأ في خطوتين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-Nx-ymq">
-                                                <rect key="frame" x="160.5" y="5" width="93" height="25"/>
+                                                <rect key="frame" x="154.5" y="5" width="105" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="g6c-w5-dFh"/>
                                                 </constraints>
@@ -539,7 +576,7 @@
                                                 <rect key="frame" x="24" y="160" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="الاسم كاملاً" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ul3-dJ-ZBY" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -571,7 +608,7 @@
                                                 <rect key="frame" x="24" y="232" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-eC-qcg" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -602,8 +639,8 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17t-FG-d9F" customClass="AnimatableView" customModule="IBAnimatable">
                                                 <rect key="frame" x="24" y="304" width="366" height="56"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQc-1Q-Ptd" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-CF-hFk" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -614,16 +651,16 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <outlet property="delegate" destination="4rB-Fe-fMS" id="Jwb-Lx-1et"/>
+                                                            <outlet property="delegate" destination="4rB-Fe-fMS" id="aGx-iI-9bN"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" name="LightPrimaryColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="JQc-1Q-Ptd" firstAttribute="leading" secondItem="17t-FG-d9F" secondAttribute="leading" constant="24.5" id="JVx-Mu-uQd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="JQc-1Q-Ptd" secondAttribute="trailing" constant="50" id="ac3-vw-g8v"/>
+                                                    <constraint firstItem="eLa-CF-hFk" firstAttribute="centerY" secondItem="17t-FG-d9F" secondAttribute="centerY" id="95B-Xq-T6s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eLa-CF-hFk" secondAttribute="trailing" constant="50" id="ES6-ab-XSk"/>
                                                     <constraint firstAttribute="height" constant="56" id="d8G-IU-niw"/>
-                                                    <constraint firstItem="JQc-1Q-Ptd" firstAttribute="centerY" secondItem="17t-FG-d9F" secondAttribute="centerY" id="ycM-8D-EiM"/>
+                                                    <constraint firstItem="eLa-CF-hFk" firstAttribute="leading" secondItem="17t-FG-d9F" secondAttribute="leading" constant="24.5" id="gh9-bx-M1l"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -635,7 +672,7 @@
                                                 <rect key="frame" x="24" y="374" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okM-0J-B6g" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18.5" width="291.5" height="19"/>
+                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -703,10 +740,10 @@
                                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-H1-UUo">
-                                                <rect key="frame" x="101" y="544" width="212" height="30"/>
+                                                <rect key="frame" x="93.5" y="544" width="227" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb8-yD-7eA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="YUl-2h-APD"/>
                                                         </constraints>
@@ -716,7 +753,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2y-Pm-eLJ" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="131" y="0.0" width="81" height="30"/>
+                                                        <rect key="frame" x="140" y="0.0" width="87" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="SXE-zi-Ex7"/>
                                                         </constraints>
@@ -811,7 +848,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="c7W-0S-aeF"/>
                     <connections>
-                        <outlet property="emailTF" destination="JQc-1Q-Ptd" id="KP0-fp-n5c"/>
+                        <outlet property="emailTF" destination="eLa-CF-hFk" id="rQR-Ds-TaS"/>
                         <outlet property="emailView" destination="17t-FG-d9F" id="JsY-mv-3Ub"/>
                         <outlet property="loader" destination="ge3-bJ-54p" id="We8-3K-hOw"/>
                         <outlet property="mobileTF" destination="cI5-eC-qcg" id="xfU-rA-OrS"/>
@@ -852,7 +889,7 @@
                                                 <rect key="frame" x="24" y="314" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="أدخل الرمز المرسل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="677-lS-sZR" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -884,7 +921,7 @@
                                                 <rect key="frame" x="24" y="400" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-A5-ZwA" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18.5" width="291.5" height="19"/>
+                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -929,7 +966,7 @@
                                                 <rect key="frame" x="24" y="476" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="تأكيد كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-iv-gbF" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18.5" width="291.5" height="19"/>
+                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -1018,13 +1055,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إعادة تعيين كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euZ-4L-Qn0">
-                                        <rect key="frame" x="59.5" y="212" width="295.5" height="28"/>
+                                        <rect key="frame" x="45" y="212" width="324" height="35.5"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Medium" family="DIN Next LT Arabic" pointSize="24"/>
                                         <color key="textColor" name="primary_color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" text="قم بإدخال كلمة المرور الجديدة, و من ثم قم بتأكيدها مرة أخرى" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-td-Sma">
-                                        <rect key="frame" x="59.5" y="255" width="295.5" height="20"/>
+                                        <rect key="frame" x="45" y="262.5" width="324" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="ba4-IM-J0e"/>
                                         </constraints>
@@ -1109,10 +1146,10 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nr8-IM-XMe">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="853"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="884"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إبدأ في خطوتين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-E8-G98">
-                                                <rect key="frame" x="160.5" y="5" width="93" height="25"/>
+                                                <rect key="frame" x="154.5" y="5" width="105" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="umg-H6-ThB"/>
                                                 </constraints>
@@ -1124,7 +1161,7 @@
                                                 <rect key="frame" x="24" y="160" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="* اسم المتجر بالانجليزية" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CnN-Wh-0O9" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -1182,11 +1219,11 @@
                                                 <rect key="frame" x="24" y="322" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="* اسم العلامة التجارية بالعربية" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-8G-adn" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                 <color key="value" name="gray_color"/>
@@ -1214,7 +1251,7 @@
                                                 <rect key="frame" x="24" y="390" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="*كيف سمعت عن متاجر؟" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-dk-ig8" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -1260,8 +1297,8 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5r-Pp-J4F" customClass="AnimatableView" customModule="IBAnimatable">
                                                 <rect key="frame" x="24" y="458" width="366" height="56"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="أكتب الوسيلة التي سمعت بها عن متاجر" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96k-Ug-68h" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="*كيف سمعت عن متاجر؟" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96k-Ug-68h" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -1287,7 +1324,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka7-uF-99T" userLabel="لديك حساب في متاجر ؟">
-                                                <rect key="frame" x="24" y="534" width="118" height="30"/>
+                                                <rect key="frame" x="24" y="534" width="128" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="K1E-pU-D6a"/>
                                                 </constraints>
@@ -1323,10 +1360,10 @@
                                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dw7-Ih-jXJ">
-                                                <rect key="frame" x="101" y="690" width="212" height="30"/>
+                                                <rect key="frame" x="93.5" y="721" width="227" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-OM-dgb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="z2O-oi-lp8"/>
                                                         </constraints>
@@ -1336,7 +1373,7 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-0T-7oV" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="131" y="0.0" width="81" height="30"/>
+                                                        <rect key="frame" x="140" y="0.0" width="87" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ZPa-92-sXB"/>
                                                         </constraints>
@@ -1369,13 +1406,12 @@
                                                     <action selector="isHaveTradeAction:" destination="UPI-fo-emj" eventType="touchUpInside" id="v9h-AJ-GQo"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zFd-4g-TOb">
-                                                <rect key="frame" x="39.5" y="652" width="335" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zFd-4g-TOb">
+                                                <rect key="frame" x="115" y="652" width="184" height="61"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-9X-Jy1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="6zO-Gj-q8T"/>
                                                             <constraint firstAttribute="height" constant="30" id="T3k-6l-JBl"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="12"/>
@@ -1383,45 +1419,50 @@
                                                             <color key="titleColor" name="black_color"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-YQ-Ww6" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="151" y="0.0" width="85" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="85" id="45u-XK-Pop"/>
-                                                            <constraint firstAttribute="height" constant="30" id="9yA-3c-EIc"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="12"/>
-                                                        <state key="normal" title="الشروط و الأحكام">
-                                                            <color key="titleColor" name="primary_color"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="Oy6-PN-Vio" kind="show" id="aiK-EW-2AC"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ko-K8-oBT">
-                                                        <rect key="frame" x="237" y="0.0" width="7" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="7" id="AV0-x3-XnC"/>
-                                                            <constraint firstAttribute="height" constant="30" id="pLq-9a-UZ9"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="12"/>
-                                                        <state key="normal" title="و">
-                                                            <color key="titleColor" name="black_color"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z86-T2-i8a" userLabel="ل انت مستخدم جديد في تموين بلس؟">
-                                                        <rect key="frame" x="245" y="0.0" width="90" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="90" id="Bii-gb-UJe"/>
-                                                            <constraint firstAttribute="height" constant="30" id="Yh7-6G-y15"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="12"/>
-                                                        <state key="normal" title="سياسة الخصوصية">
-                                                            <color key="titleColor" name="primary_color"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="1pR-4I-Lea" kind="show" id="7jE-kl-opU"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mzn-JA-l0Q">
+                                                        <rect key="frame" x="0.0" y="31" width="184" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-YQ-Ww6" userLabel="ل انت مستخدم جديد في تموين بلس؟">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="85" id="45u-XK-Pop"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="9yA-3c-EIc"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="12"/>
+                                                                <state key="normal" title="الشروط و الأحكام">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <segue destination="Oy6-PN-Vio" kind="show" id="aiK-EW-2AC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="256" horizontalCompressionResistancePriority="756" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ko-K8-oBT">
+                                                                <rect key="frame" x="86" y="0.0" width="7" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="7" id="AV0-x3-XnC"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="pLq-9a-UZ9"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="12"/>
+                                                                <state key="normal" title="و">
+                                                                    <color key="titleColor" name="black_color"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z86-T2-i8a" userLabel="ل انت مستخدم جديد في تموين بلس؟">
+                                                                <rect key="frame" x="94" y="0.0" width="90" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="Bii-gb-UJe"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Yh7-6G-y15"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="DINNextLTArabic-Bold" family="DIN Next LT Arabic" pointSize="12"/>
+                                                                <state key="normal" title="سياسة الخصوصية">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <segue destination="1pR-4I-Lea" kind="show" id="7jE-kl-opU"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1541,7 +1582,7 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="807"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-J5-cNd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="685.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_forget_pwd" translatesAutoresizingMaskIntoConstraints="NO" id="xNK-Au-rbd">
                                                 <rect key="frame" x="171" y="90" width="72" height="72"/>
@@ -1551,10 +1592,10 @@
                                                 </constraints>
                                             </imageView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSB-Oy-qJA" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="355" width="366" height="56"/>
+                                                <rect key="frame" x="24" y="362.5" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="* الإيميل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha2-Kx-Ds8" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="18" width="291.5" height="20.5"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -1596,7 +1637,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJv-eY-CDS" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                <rect key="frame" x="24" y="441" width="366" height="50"/>
+                                                <rect key="frame" x="24" y="448.5" width="366" height="50"/>
                                                 <color key="backgroundColor" name="primary_color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="jlc-o5-kYT"/>
@@ -1614,7 +1655,7 @@
                                                 </connections>
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jOh-L1-4HQ">
-                                                <rect key="frame" x="124" y="446" width="40" height="40"/>
+                                                <rect key="frame" x="124" y="453.5" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="db3-fL-7Ld"/>
                                                     <constraint firstAttribute="height" constant="40" id="iY2-w5-CyD"/>
@@ -1634,13 +1675,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسيت كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6q-8o-7C5">
-                                        <rect key="frame" x="83" y="212" width="248.5" height="28"/>
+                                        <rect key="frame" x="77.5" y="212" width="259" height="35.5"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Medium" family="DIN Next LT Arabic" pointSize="24"/>
                                         <color key="textColor" name="primary_color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyv-0h-4pf">
-                                        <rect key="frame" x="83" y="255" width="248.5" height="50"/>
+                                        <rect key="frame" x="77.5" y="262.5" width="259" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aZ3-PV-2k3"/>
                                         </constraints>
@@ -1732,7 +1773,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإعدادات" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-5W-ay4">
-                                        <rect key="frame" x="180.5" y="63" width="53.5" height="19"/>
+                                        <rect key="frame" x="177.5" y="60.5" width="59" height="24"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -1796,7 +1837,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سياسة الخصوصية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lm-FA-L5F">
-                                        <rect key="frame" x="151" y="62.5" width="112.5" height="20"/>
+                                        <rect key="frame" x="150" y="60" width="114.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="17"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -1863,7 +1904,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط و الأحكام" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-y6-bx9">
-                                        <rect key="frame" x="158.5" y="63" width="97.5" height="19"/>
+                                        <rect key="frame" x="154.5" y="60.5" width="105.5" height="24"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -1914,67 +1955,67 @@
     </scenes>
     <designables>
         <designable name="677-lS-sZR">
-            <size key="intrinsicContentSize" width="100" height="20.5"/>
+            <size key="intrinsicContentSize" width="108" height="25.5"/>
         </designable>
         <designable name="7iw-wg-Hd2">
-            <size key="intrinsicContentSize" width="31" height="20"/>
+            <size key="intrinsicContentSize" width="37.5" height="25"/>
         </designable>
         <designable name="96k-Ug-68h">
-            <size key="intrinsicContentSize" width="218" height="20.5"/>
+            <size key="intrinsicContentSize" width="146.5" height="25.5"/>
         </designable>
         <designable name="ACB-A5-ZwA">
-            <size key="intrinsicContentSize" width="57" height="19"/>
+            <size key="intrinsicContentSize" width="68" height="24"/>
         </designable>
         <designable name="CnN-Wh-0O9">
-            <size key="intrinsicContentSize" width="130" height="20.5"/>
+            <size key="intrinsicContentSize" width="137.5" height="25.5"/>
         </designable>
         <designable name="Dfp-Mz-aJ1">
-            <size key="intrinsicContentSize" width="35" height="32"/>
+            <size key="intrinsicContentSize" width="37" height="37"/>
         </designable>
         <designable name="IiA-9I-13C">
-            <size key="intrinsicContentSize" width="643.5" height="17.5"/>
-        </designable>
-        <designable name="JQc-1Q-Ptd">
-            <size key="intrinsicContentSize" width="91.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="663" height="22.5"/>
         </designable>
         <designable name="KJv-eY-CDS">
-            <size key="intrinsicContentSize" width="51" height="31"/>
+            <size key="intrinsicContentSize" width="45" height="36"/>
         </designable>
         <designable name="L9f-OK-LPs">
-            <size key="intrinsicContentSize" width="50" height="32"/>
+            <size key="intrinsicContentSize" width="96" height="37"/>
         </designable>
         <designable name="SHO-iv-gbF">
-            <size key="intrinsicContentSize" width="89" height="19"/>
+            <size key="intrinsicContentSize" width="101.5" height="24"/>
         </designable>
         <designable name="Ue9-Cg-cam">
-            <size key="intrinsicContentSize" width="50" height="32"/>
+            <size key="intrinsicContentSize" width="52" height="37"/>
         </designable>
         <designable name="V6k-dk-ig8">
-            <size key="intrinsicContentSize" width="134" height="20.5"/>
+            <size key="intrinsicContentSize" width="146.5" height="25.5"/>
         </designable>
         <designable name="bv6-8G-adn">
-            <size key="intrinsicContentSize" width="168.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="176.5" height="25.5"/>
         </designable>
         <designable name="cI5-eC-qcg">
-            <size key="intrinsicContentSize" width="57.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="65" height="25.5"/>
+        </designable>
+        <designable name="eLa-CF-hFk">
+            <size key="intrinsicContentSize" width="95" height="25.5"/>
         </designable>
         <designable name="ha2-Kx-Ds8">
-            <size key="intrinsicContentSize" width="47.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="52" height="25.5"/>
         </designable>
         <designable name="mHQ-Iu-S6g">
-            <size key="intrinsicContentSize" width="157" height="32"/>
+            <size key="intrinsicContentSize" width="173" height="37"/>
         </designable>
         <designable name="okM-0J-B6g">
-            <size key="intrinsicContentSize" width="57" height="19"/>
+            <size key="intrinsicContentSize" width="68" height="24"/>
         </designable>
         <designable name="sp1-Dg-nWt">
-            <size key="intrinsicContentSize" width="123" height="31"/>
+            <size key="intrinsicContentSize" width="146" height="36"/>
         </designable>
         <designable name="ul3-dJ-ZBY">
-            <size key="intrinsicContentSize" width="64.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="72" height="25.5"/>
         </designable>
         <designable name="zeU-Ob-G7M">
-            <size key="intrinsicContentSize" width="92" height="32"/>
+            <size key="intrinsicContentSize" width="93" height="37"/>
         </designable>
     </designables>
     <resources>
@@ -1988,6 +2029,7 @@
         <image name="ic_reset" width="73" height="73"/>
         <image name="img_no_internet" width="353" height="289"/>
         <image name="nav_back_btn" width="38" height="38"/>
+        <image name="row-left" width="9" height="14"/>
         <image name="row_down" width="8" height="5"/>
         <image name="switch_off" width="40" height="24"/>
         <image name="top_register" width="375" height="120"/>
@@ -2004,7 +2046,7 @@
             <color red="0.46700000762939453" green="0.50199997425079346" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary_color">
-            <color red="0.3919999897480011" green="0.39599999785423279" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.39215686274509803" green="0.396078431372549" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

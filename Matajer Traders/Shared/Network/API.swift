@@ -17,7 +17,7 @@ enum API {
     private  static let TAG = "API - Service "
     
     
-    static let DOMAIN_URL = "https://mapp.sa/api/merchant/v1/";
+    static let DOMAIN_URL = "https://matajerapp.dev/api/merchant/v1/";
     static let FIREBASE_SUBSCRIBE_iosArTopic = "merchantapp";
      static let FIREBASE_SUBSCRIBE_iosTopic = "iosMerchantAppPopup";
     

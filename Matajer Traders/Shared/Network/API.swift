@@ -18,7 +18,7 @@ enum API {
     
     
     static let DOMAIN_URL = "https://matajerapp.dev/api/merchant/v1/";
-    static let FIREBASE_SUBSCRIBE_iosArTopic = "merchantapp";
+    static var FIREBASE_SUBSCRIBE_iosArTopic = "merchantapp"
      static let FIREBASE_SUBSCRIBE_iosTopic = "iosMerchantAppPopup";
     
    

@@ -328,7 +328,9 @@ extension UIViewController  {
         
         @IBAction func singOutWithPermently(message :String){
             self.showOkAlertWithComp(title: "", message: message, okTitle: "تسجيل الخروج") { (bool) in
-                self.singOut()
+                MatajerUtility.logOut()
+                WebCacheCleaner.clean()
+               
             }
             
         }

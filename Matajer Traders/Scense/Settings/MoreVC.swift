@@ -11,9 +11,10 @@ import WebKit
 import Alamofire
 import SDWebImage
 import IBAnimatable
+import SafariServices
 
 
-class MoreVC: UIViewController , WKNavigationDelegate {
+class MoreVC: UIViewController , WKNavigationDelegate,SFSafariViewControllerDelegate {
     
     
     @IBOutlet var previewView2: UIView!
@@ -131,27 +132,28 @@ class MoreVC: UIViewController , WKNavigationDelegate {
     
     @IBAction func openLinkAction(_ sender: Any) {
         
-        if let url = URL(string: "\( MatajerUtility.loadUser()?.storeData?.websiteUrl ?? "")"),
-            UIApplication.shared.canOpenURL(url)
+        if let currentURL = URL(string: "\( MatajerUtility.loadUser()?.storeData?.websiteUrl ?? "")"),
+            UIApplication.shared.canOpenURL(currentURL)
         {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+                let vc = SFSafariViewController(url: currentURL)
+                vc.delegate = self
+
+                present(vc, animated: true)
+            
         }
         
     }
     @IBAction func openAppStoreAction(_ sender: Any) {
         
-        if let url = URL(string: "itms-apps://itunes.apple.com/app/\( MatajerUtility.loadUser()?.storeData?.appStore ?? "")"),
-            UIApplication.shared.canOpenURL(url)
+        if let currentURL = URL(string: "itms-apps://itunes.apple.com/app/\( MatajerUtility.loadUser()?.storeData?.appStore ?? "")"),
+            UIApplication.shared.canOpenURL(currentURL)
         {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+          
+                let vc = SFSafariViewController(url: currentURL)
+                vc.delegate = self
+
+                present(vc, animated: true)
+         
         }
         
     }

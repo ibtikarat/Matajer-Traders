@@ -12,8 +12,9 @@ import Alamofire
 import SDWebImage
 import IBAnimatable
 import QuickLook
+import SafariServices
 
-class ProductsVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDataSource {
+class ProductsVC: UIViewController , WKNavigationDelegate , QLPreviewControllerDataSource, SFSafariViewControllerDelegate {
     @IBOutlet var printBtn: UIButton!
     @IBOutlet var noti_count_lbl: AnimatableLabel!
     @IBOutlet var webView: WKWebView!
@@ -192,15 +193,13 @@ class ProductsVC: UIViewController , WKNavigationDelegate , QLPreviewControllerD
         if let currentURL = navigationAction.request.url?.absoluteString{
                 print(currentURL)
             if (currentURL.contains("/product/") && currentURL.contains("view")) {
-                if let url = URL(string: "\(currentURL)"),
-                           UIApplication.shared.canOpenURL(url)
-                       {
-                           if #available(iOS 10.0, *) {
-                               UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                           } else {
-                               UIApplication.shared.openURL(url)
-                           }
-                       }
+
+                if let url = URL(string: currentURL) {
+                    let vc = SFSafariViewController(url: url)
+                    vc.delegate = self
+
+                    present(vc, animated: true)
+                }
             }
         }
 

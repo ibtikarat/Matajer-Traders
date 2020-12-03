@@ -12,9 +12,10 @@ import WebKit
 import Alamofire
 import CoreLocation
 import QuickLook
+import SafariServices
 
 
-class SettingsVC: UIViewController , WKNavigationDelegate, QLPreviewControllerDataSource {
+class SettingsVC: UIViewController , WKNavigationDelegate, QLPreviewControllerDataSource,SFSafariViewControllerDelegate {
     
     @IBOutlet var printBtn: UIButton!
     @IBOutlet var titleLbl: UILabel!
@@ -154,14 +155,15 @@ class SettingsVC: UIViewController , WKNavigationDelegate, QLPreviewControllerDa
                     currentURL.contains("alahlionline") ||
                     currentURL.contains("alrajhibank") ||
                     currentURL.contains("name.com") ||
-                    currentURL.contains("freelance")  ) {
+                    currentURL.contains("freelance") ||
+                    currentURL.contains("register"  )) {
                 if let url = URL(string: "\(currentURL)"),
                     UIApplication.shared.canOpenURL(url)
                 {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url)
+                    if let url = URL(string: currentURL) {
+                        let vc = SFSafariViewController(url: url)
+                        vc.delegate = self
+                        present(vc, animated: true)
                     }
                 } 
             }

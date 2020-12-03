@@ -49,18 +49,29 @@ class LaunchScreenVC: UIViewController {
                 let userData = try! JSONSerialization.data(withJSONObject: value, options: [])
                 let user = try! JSONDecoder().decode(User.self, from: userData)
                 if user.storeData?.ios_popup_topic?.count ?? 0 > 0 {
+                    #if DEBUG
+                    Messaging.messaging().subscribe(toTopic: "test\(user.storeData?.ios_popup_topic! ?? "IosMatajerAppTopic-3")") { error in
+                                                 if error == nil {
+                                                     
+                                                     print("Subscribed to ios Topic Package")
+                                                 }
+                                             }
+                            
+                    #else
                     Messaging.messaging().subscribe(toTopic: (user.storeData?.ios_popup_topic!)!) { error in
                                                  if error == nil {
                                                      
                                                      print("Subscribed to ios Topic Package")
                                                  }
                                              }
-                             }
+                            
+                    #endif
+}
                 MatajerUtility.saveUser(user: user)
                 
                 UIApplication.shared.applicationIconBadgeNumber = user.notificationAlarm ?? 0
                 MatajerUtility.setNotificationNo(notifcation_number:user.notificationAlarm ?? 0)
-                  DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                  DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.routeToHome()
                }
             }

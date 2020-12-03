@@ -104,13 +104,13 @@ extension UITextField  {
             
             if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
 
-            guard let image :UIImageView = (self.rightView! as! UIImageView) else{
+            guard let image :UIImageView = (self.rightView! as? UIImageView) else{
                 return nil
             }
                 return image.image
             }else{
                 
-                guard let image :UIImageView = (self.leftView! as! UIImageView) else{
+                guard let image :UIImageView = (self.leftView! as? UIImageView) else{
                     return nil
                 }
                 
@@ -138,13 +138,13 @@ extension UITextField  {
             
             if UIApplication.shared.userInterfaceLayoutDirection == .leftToRight {
                 
-                guard let image :UIImageView = (self.rightView! as! UIImageView) else{
+                guard let image :UIImageView = (self.rightView! as? UIImageView) else{
                     return nil
                 }
                 return image.image
             }else{
                 
-                guard let image :UIImageView = (self.leftView! as! UIImageView) else{
+                guard let image :UIImageView = (self.leftView! as? UIImageView) else{
                     return nil
                 }
                 
@@ -152,25 +152,5 @@ extension UITextField  {
             }
         }
     }
-    
-    
-//    @IBInspectable var paddingStartEnd: CGFloat {
-//        set{
-//            let padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-//
-//            self.bounds.inset(by: padding)
-//
-//            self.textRect(forBounds: self.bounds)
-//            self.placeholderRect(forBounds: self.bounds)
-//            self.editingRect(forBounds: self.bounds)
-//
-//        }
-//
-//        get{
-//            return 20
-//
-//        }
-//    }
-    
-    
+   
 }

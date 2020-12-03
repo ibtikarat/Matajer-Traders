@@ -220,12 +220,24 @@ class Register2VC: UIViewController {
                 }
                 
                 if user.storeData?.ios_popup_topic?.count ?? 0 > 0 {
+                    
+                    #if DEBUG
+                    Messaging.messaging().subscribe(toTopic: "test\(user.storeData?.ios_popup_topic! ?? "IosMatajerAppTopic-3")") { error in
+                                                 if error == nil {
+                                                     
+                                                     print("Subscribed to ios Topic Debug Package")
+                                                 }
+                                             }
+                            
+                    #else
                     Messaging.messaging().subscribe(toTopic: (user.storeData?.ios_popup_topic!)!) { error in
-                                    if error == nil {
-                                        
-                                        print("Subscribed to ios Topic Package")
-                                    }
-                                }
+                                                 if error == nil {
+                                                     
+                                                     print("Subscribed to ios Topic Package")
+                                                 }
+                                             }
+                            
+                    #endif
                 }
                 
                 

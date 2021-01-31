@@ -19,6 +19,8 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
 , MessagingDelegate {
     
     var window: UIWindow?
+    var countries : [CountryApp]?
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -32,6 +34,8 @@ class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCente
           }
         return true
     }
+    
+
     
     func registerNotification(){
         

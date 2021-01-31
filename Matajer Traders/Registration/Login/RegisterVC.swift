@@ -8,10 +8,12 @@
 
 import UIKit
 import IBAnimatable
+import DropDown
+import SKCountryPicker
 
 class RegisterVC: UIViewController {
     
- 
+    
     @IBOutlet var nextBtn: AnimatableButton!
     @IBOutlet var loader: UIActivityIndicatorView!
     @IBOutlet var passwordTF: AnimatableTextField!
@@ -22,6 +24,10 @@ class RegisterVC: UIViewController {
     @IBOutlet var emailView: AnimatableView!
     @IBOutlet var mobileView: AnimatableView!
     @IBOutlet var nameView: AnimatableView!
+    @IBOutlet var imgCountryImgV: UIImageView!
+    @IBOutlet var codeNoLbl: UILabel!
+    @IBOutlet var row_imgV: UIImageView!
+   
     
     var name:String?
     var mobile:String?
@@ -29,12 +35,16 @@ class RegisterVC: UIViewController {
     var password:String?
     var valid_email:Bool?
     var valid_mobile:Bool?
-    
+    var mobile_maxLenghth = 0
+    var country_id = 0
+    var country:CountryApp?
+    var countries:[CountryApp] = AppDelegate.shared.countries ?? [CountryApp]()
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.isHidden = true
-     
-     
+       
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -42,13 +52,54 @@ class RegisterVC: UIViewController {
         nameTF.text = name ?? ""
         passwordTF.text = password ?? ""
         mobileTF.text = mobile ?? ""
+        self.country = AppDelegate.shared.countries?.first(where: {$0.prefix == 966})
+        updateCountryInfo()
     }
     
     @IBAction func backAction(_ sender: Any) {
         self.signIn()
     }
     
+    @IBAction func selectCountryAction(_ sender: UIButton) {
+        row_imgV.image = Constants.row_up
+        let countryController = CountryPickerController.presentController(on: self) { [weak self] (country: Country) in
+            
+            guard let self = self else { return }
+            
+            self.row_imgV.image = Constants.row_down
+            self.imgCountryImgV.image = country.flag
+            self.codeNoLbl.text = "\(country.dialingCode ?? "")"
+            self.country =  self.countries.first(where: {"\($0.prefix ?? 966)" == country.digitCountrycode})
+            self.mobile_maxLenghth = self.country?.realMobile ?? 0
+            print(self.country?.name ?? "")
+         
+        }
+        
+        CountryManager.shared.addFilter(.countryDialCode)
+        CountryManager.shared.addFilter(.countryCode)
+        countryController.searchController.searchBar.searchTextField.font = Constants.appFont14Regular
+        
+        countryController.labelFont = Constants.appFont14Regular
+        countryController.detailFont = Constants.appFont14Regular
+        
+       
+        countryController.flagStyle = .circular
+        countryController.isCountryFlagHidden = false
+        countryController.isCountryDialHidden = false
+        countryController.favoriteCountriesLocaleIdentifiers = ["SA", "KW"]
+     
+    }
     
+    
+    func updateCountryInfo(){
+        row_imgV.image = Constants.row_down
+        country_id = country?.id ?? 0
+        mobile_maxLenghth = country?.realMobile ?? 0
+        imgCountryImgV.fetchingImage(url: country?.img ?? "")
+        codeNoLbl.text = "+\(country?.prefix ?? 0)"
+    }
+    
+
     @IBAction func registerAction(_ sender: Any)
     {
         switch validationInput()
@@ -65,7 +116,7 @@ class RegisterVC: UIViewController {
         super.viewDidLayoutSubviews()
         nextBtn.applyGradient(colours: [Constants.app_gradiant_1 ?? UIColor.black,
                                         Constants.app_gradiant_2 ?? UIColor.black],gradientOrientation :
-            .horizontal)
+                                            .horizontal)
     }
     
     func routeToNextStepAction(){
@@ -77,6 +128,7 @@ class RegisterVC: UIViewController {
         vc.email = emailTF.text
         vc.password = passwordTF.text
         vc.mobile = mobileTF.text
+        vc.country_id = self.country?.id
         name  = nameTF.text
         email = emailTF.text
         password = passwordTF.text
@@ -114,10 +166,13 @@ class RegisterVC: UIViewController {
             return .invalid("الرجاء إضافة الإسم الأول و الأخير")
         }
         
-        if mobileTF.text?.isEmpty ?? true  ||  !mobileTF.text!.ValidateMobileNumber() {
+        
+        
+        if mobileTF.text?.isEmpty ?? true  ||  !mobileTF.text!.ValidateMobileNumber(maxLenght: mobile_maxLenghth) {
             
-            return .invalid("مطلوب 10أرقام رقم الجوال ********05")
+            return .invalid("يجب إدخال رقم جوال صحيح")
         }
+        
         if ( emailTF.text?.isEmpty ?? true ||  !emailTF.text!.isEmailValid )  {
             return .invalid("يجب إدخال البريد بشكل صحيح")
         }
@@ -127,11 +182,11 @@ class RegisterVC: UIViewController {
         }
         if passwordTF.text!.count < 6 {
             
-          
+            
         }
         if !(valid_email ?? false ){
             return .invalid("البريد الإلكتروني مسجل مسبقاً")
-            }
+        }
         if !(valid_mobile ?? false) {
             return .invalid("رقم الجوال مسجل مسبقاً")
         }
@@ -159,6 +214,7 @@ extension RegisterVC : UITextFieldDelegate {
         case nameTF:
             nameView.borderColor = Constants.PrimaryColor
             nameView.borderWidth = 1
+       
             
         default:
             return
@@ -173,7 +229,7 @@ extension RegisterVC : UITextFieldDelegate {
             emailView.borderWidth = 0
             email  = emailTF.text
             if emailTF.text!.isEmailValid  {
-               checkEmailMobile(value: email ?? "")
+                checkEmailMobile(value: email ?? "")
             }
         case passwordTF:
             passwordView.borderColor = .clear
@@ -182,13 +238,15 @@ extension RegisterVC : UITextFieldDelegate {
         case mobileTF:
             mobileView.borderColor = .clear
             mobileView.borderWidth = 0
-            mobile =  mobileTF.text
+            mobile =  "\(self.country?.prefix ?? 966)\(mobileTF.text ?? "")"
             if mobileTF.text!.ValidateMobileNumber() {
-               checkEmailMobile(value: mobile ?? "")
+                checkEmailMobile(value: mobile ?? "")
             }
         case nameTF:
             nameView.borderColor = .clear
             nameView.borderWidth = 0
+     
+            
             
         default:
             return true
@@ -202,7 +260,7 @@ extension RegisterVC : UITextFieldDelegate {
             emailView.borderWidth = 0
             email  = emailTF.text
             if emailTF.text!.isEmailValid  {
-               checkEmailMobile(value: email ?? "")
+                checkEmailMobile(value: email ?? "")
             }
         case passwordTF:
             passwordView.borderColor = .clear
@@ -212,11 +270,12 @@ extension RegisterVC : UITextFieldDelegate {
             mobileView.borderWidth = 0
             mobile =  mobileTF.text
             if mobileTF.text!.ValidateMobileNumber() {
-              checkEmailMobile(value: mobile ?? "")
+                checkEmailMobile(value: mobile ?? "")
             }
         case nameTF:
             nameView.borderColor = .clear
             nameView.borderWidth = 0
+      
             
         default:
             return 
@@ -226,26 +285,26 @@ extension RegisterVC : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         switch textField {
-            
+        
         case mobileTF:
             
             if let char = string.cString(using: String.Encoding.utf8) {
                 let isBackSpace = strcmp(char, "\\b")
                 if (isBackSpace == -92) {
-                return true
+                    return true
                 }
             }
-           return  checkMaxLength(textField: mobileTF, maxLength: 9)
+            return  checkMaxLength(textField: mobileTF, maxLength: 9)
             
-            
+      
         default:
             return true
         }
         
-        return true
+        
     }
     
-
+    
     
     func checkEmailMobile(value:String) {
         
@@ -255,10 +314,10 @@ extension RegisterVC : UITextFieldDelegate {
         API.CHECK_MOBILE_EMAIL.startRequest(showIndicator: false, params: params) { (Api,response) in
             if response.isSuccess {
                 if value.isEmailValid {
-                   
+                    
                     self.valid_email = true
                 } else if value.ValidateMobileNumber() {
-                   
+                    
                     self.valid_mobile = true
                 }
                 
@@ -270,12 +329,12 @@ extension RegisterVC : UITextFieldDelegate {
                     self.showBunnerAlert(title: "", message: "رقم الجوال مسجل مسبقاً")
                     self.valid_mobile = false
                 }
-               
-             
-
+                
+                
+                
             }
         }
-       
+        
     }
     
 }

@@ -64,6 +64,9 @@
 		8392246A2510A0D900E60E34 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839224692510A0D800E60E34 /* WebKit.framework */; };
 		8392E7C8254ABE9F00CA97A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8392E7C7254ABE9F00CA97A8 /* GoogleService-Info.plist */; };
 		839D1972252324C80048900C /* orderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D1971252324C80048900C /* orderDetailsVC.swift */; };
+		D08514CC25C2EBE20054CA4B /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08514CA25C2EBE10054CA4B /* MyCell.xib */; };
+		D08514CD25C2EBE20054CA4B /* ESCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08514CB25C2EBE20054CA4B /* ESCountryCell.swift */; };
+		D08514D025C2F1FD0054CA4B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08514CF25C2F1FD0054CA4B /* Country.swift */; };
 		E8568031DC0C3D054F8691B1 /* Pods_Matajer_Traders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B9CF5361DF1D3AFA65C7E3 /* Pods_Matajer_Traders.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +137,9 @@
 		839224692510A0D800E60E34 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8392E7C7254ABE9F00CA97A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		839D1971252324C80048900C /* orderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailsVC.swift; sourceTree = "<group>"; };
+		D08514CA25C2EBE10054CA4B /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		D08514CB25C2EBE20054CA4B /* ESCountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESCountryCell.swift; sourceTree = "<group>"; };
+		D08514CF25C2F1FD0054CA4B /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				8367E5A2250F46D00091A538 /* User.swift */,
+				D08514CF25C2F1FD0054CA4B /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,6 +358,8 @@
 		8367E5B8250F46D00091A538 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D08514CB25C2EBE20054CA4B /* ESCountryCell.swift */,
+				D08514CA25C2EBE10054CA4B /* MyCell.xib */,
 				8367E5B9250F46D00091A538 /* MatajerUtility.swift */,
 			);
 			path = Utility;
@@ -434,6 +443,7 @@
 				835CEDFC252097CD001226E5 /* custom_sound.caf in Resources */,
 				8392245B251091B500E60E34 /* DINNextLTArabic-Bold.ttf in Resources */,
 				8392E7C8254ABE9F00CA97A8 /* GoogleService-Info.plist in Resources */,
+				D08514CC25C2EBE20054CA4B /* MyCell.xib in Resources */,
 				834FAC832511EBC7001AE1EA /* Registration.storyboard in Resources */,
 				8376E469251B54D900A97604 /* InfoPlist.strings in Resources */,
 				83653DC1252C644E00E8316F /* iPhone.css in Resources */,
@@ -521,6 +531,7 @@
 				8367E5C4250F46D10091A538 /* API.swift in Sources */,
 				8367E5E4250F46D10091A538 /* MatajerUtility.swift in Sources */,
 				8367E5DF250F46D10091A538 /* StoryBoardExtention.swift in Sources */,
+				D08514D025C2F1FD0054CA4B /* Country.swift in Sources */,
 				833FEF15251B023B00859EFE /* PrivacyVC.swift in Sources */,
 				83634717250F8C7C00CF2317 /* LaunchScreenVC.swift in Sources */,
 				834FAC852511F34D001AE1EA /* IntroductionScreensVC.swift in Sources */,
@@ -531,6 +542,7 @@
 				8367E5DB250F46D10091A538 /* ViewControllerExtention.swift in Sources */,
 				8367E5E2250F46D10091A538 /* ViewExtention.swift in Sources */,
 				83634716250F8C7C00CF2317 /* NoInternetVC.swift in Sources */,
+				D08514CD25C2EBE20054CA4B /* ESCountryCell.swift in Sources */,
 				8392246225109EB300E60E34 /* OrdersVC.swift in Sources */,
 				839D1972252324C80048900C /* orderDetailsVC.swift in Sources */,
 				8392246825109EE700E60E34 /* CustomersVC.swift in Sources */,
@@ -705,7 +717,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.staging;
 				PRODUCT_NAME = "Matajer Trader";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -728,7 +740,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matajer.staging;
 				PRODUCT_NAME = "Matajer Trader";
 				PROVISIONING_PROFILE_SPECIFIER = "";

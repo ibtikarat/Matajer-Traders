@@ -31,6 +31,7 @@ class Register2VC: UIViewController {
     var password:String?
     var source:String?
     var link:String?
+    var country_id:Int?
     var checked = false
     @IBOutlet var registerBtn: AnimatableButton!
     
@@ -38,7 +39,6 @@ class Register2VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.isHidden = true
-        
         enNameTF.keyboardType = .alphabet
         otherView.visibility = .gone
         availableLbl.visibility = .gone
@@ -198,6 +198,7 @@ class Register2VC: UIViewController {
         params["fcm_token"] =  UserDefaults.standard.string(forKey: "fcmToken") ?? ""
         params["device_type"] = "ios"
         params["uuid"] = UIDevice.current.identifierForVendor?.uuidString
+        params["country_id"] = self.country_id?.description
         
         API.REGISTER.startRequest(showIndicator: true, params: params) { (Api,response) in
             if response.isSuccess {

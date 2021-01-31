@@ -15,6 +15,7 @@ class LaunchScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startReqestCountries()
         let mainStoryboard = UIStoryboard(name: "Registration", bundle: nil)
         if MatajerUtility.isFirstTime(){
             DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
@@ -39,6 +40,29 @@ class LaunchScreenVC: UIViewController {
         
         
     }
+    
+    
+    
+    func startReqestCountries()
+    {
+        API.COUNTRIES.startRequest(showIndicator: false) { (api, statusResult) in
+            if statusResult.isSuccess {
+                let value = statusResult.data  as! [Any]
+                
+                let countriesData = try! JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                
+                let item = try! JSONDecoder().decode([CountryApp].self, from: countriesData)
+                
+                AppDelegate.shared.countries = item
+                
+            }
+            else
+            {
+                self.showOkAlert(title: "", message: statusResult.errorMessege)
+            }
+        }
+    }
+    
     
     
     func startReqestGetUserData()

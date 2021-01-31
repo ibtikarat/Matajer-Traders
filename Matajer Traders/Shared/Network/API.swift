@@ -26,7 +26,7 @@ enum API {
     case HOME
     
     case GET_USER
-   
+    case COUNTRIES
 
     //auth
     case CHECK_LINK
@@ -46,6 +46,8 @@ enum API {
             switch self {
                 
            
+            case .COUNTRIES:
+                return (API.DOMAIN_URL + "countries/",.get,"")
                 
             case .GET_USER:
                 return (API.DOMAIN_URL + "info",.get,nil)

@@ -128,7 +128,7 @@ extension UIViewController  {
                                 tapGestureDismissal: false,
                                 panGestureDismissal: false,
                                 hideStatusBar: false) {
-                                    
+            
         }
         let dialogAppearance = PopupDialogDefaultView.appearance()
         dialogAppearance.titleFont            = Constants.appFont14Regular
@@ -290,146 +290,149 @@ extension UIViewController  {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-        func routePopUp(){
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = (mainStoryboard.instantiateViewController(withIdentifier: "PackagesPopUpVC") as? PackagesPopUpVC)!
-            vc.modalPresentationStyle = .overFullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.present(vc, animated: true, completion: nil)
-            }
+    func routePopUp(){
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = (mainStoryboard.instantiateViewController(withIdentifier: "PackagesPopUpVC") as? PackagesPopUpVC)!
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.present(vc, animated: true, completion: nil)
         }
-    func routeReports(){
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = (mainStoryboard.instantiateViewController(withIdentifier: "ReportsVC") as? ReportsVC)!
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                      self.navigationController?.pushViewController(vc, animated: true)
-                  }
-        }
-    
-   
+    }
     
     
-        
-        
-        
-        @IBAction func singOut(){
-            self.showCustomAlert(title: "تسجيل الخروج", message:"هل تريد تسجيل الخروج", okTitle: "لا" , cancelTitle:"تسجيل الخروج"){ result in
-                if  !result {
-                    MatajerUtility.logOut()
-                    WebCacheCleaner.clean()
-                    self.signIn()
-                }
-                
-            }
-        }
-        
-        
-        
-        @IBAction func singOutWithPermently(message :String){
-            self.showOkAlertWithComp(title: "", message: message, okTitle: "تسجيل الخروج") { (bool) in
+    
+    
+    
+    
+    
+    
+    @IBAction func singOut(){
+        self.showCustomAlert(title: "تسجيل الخروج", message:"هل تريد تسجيل الخروج", okTitle: "لا" , cancelTitle:"تسجيل الخروج"){ result in
+            if  !result {
                 MatajerUtility.logOut()
                 WebCacheCleaner.clean()
-               
+                self.signIn()
             }
             
         }
+    }
+    
+    
+    
+    @IBAction func singOutWithPermently(message :String){
+        self.showOkAlertWithComp(title: "", message: message, okTitle: "تسجيل الخروج") { (bool) in
+            MatajerUtility.logOut()
+            WebCacheCleaner.clean()
+            
+        }
         
-        
-        
-        
-        
-        @IBAction func signIn(){
-            if !MatajerUtility.isLogin(){
-                let mainStoryboard = UIStoryboard(name: "Registration", bundle: nil)
-                let vc :LoginVC = mainStoryboard.instanceVC()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
+    }
+    
+    
+    
+    
+    
+    @IBAction func signIn(){
+        if !MatajerUtility.isLogin(){
+            let mainStoryboard = UIStoryboard(name: "Registration", bundle: nil)
+            let vc :LoginVC = mainStoryboard.instanceVC()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
-        
-        
-        @IBAction func Register(){
-            if !MatajerUtility.isLogin(){
-                let mainStoryboard = UIStoryboard(name: "Registration", bundle: nil)
-                let vc :RegisterVC = mainStoryboard.instanceVC()
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
+    }
+    
+    
+    @IBAction func Register(){
+        if !MatajerUtility.isLogin(){
+            let mainStoryboard = UIStoryboard(name: "Registration", bundle: nil)
+            let vc :RegisterVC = mainStoryboard.instanceVC()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func instanceView<T: UIView>() -> T {
         
-        func hideKeyboardWhenTappedAround() {
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-            tap.cancelsTouchesInView = false
-            view.addGestureRecognizer(tap)
+        guard let view = Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)?.first as? T else {
+            fatalError("Could not locate View with with identifier \(String(describing: T.self)) in Your Project.")
         }
+        return view
+    }
+    
+    
+    func routeToHome() {
+        let transition: UIView.AnimationOptions = .transitionCrossDissolve
+        let rootviewcontroller: UIWindow
         
-        @objc func dismissKeyboard() {
-            view.endEditing(true)
-        }
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd : SceneDelegate = ((scene?.delegate as? SceneDelegate)!)
+        rootviewcontroller = sd.window!
+        sd.initAppInterface()
         
-        func instanceView<T: UIView>() -> T {
-            
-            guard let view = Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)?.first as? T else {
-                fatalError("Could not locate View with with identifier \(String(describing: T.self)) in Your Project.")
-            }
-            return view
-        }
+        let mainStoryBord = UIStoryboard(name: "Main", bundle: nil)
+        let frontBarController =  mainStoryBord.instantiateViewController(withIdentifier: "MainTabBar") as? UITabBarController
         
-        
-        
-        
-        
-        
-        
-        
-        
-        func routeToHome() {
-            let transition: UIView.AnimationOptions = .transitionCrossDissolve
-            let rootviewcontroller: UIWindow
-            
-            let scene = UIApplication.shared.connectedScenes.first
-            let sd : SceneDelegate = ((scene?.delegate as? SceneDelegate)!)
-            rootviewcontroller = sd.window!
-            sd.initAppInterface()
-            
-            let mainStoryBord = UIStoryboard(name: "Main", bundle: nil)
-            let frontBarController =  mainStoryBord.instantiateViewController(withIdentifier: "MainTabBar") as? UITabBarController
-            
-            rootviewcontroller.rootViewController = frontBarController
-            rootviewcontroller.backgroundColor = .white
-            UIView.transition(with: rootviewcontroller, duration: 0.55001, options: transition, animations: { () -> Void in
-            }) { (finished) -> Void in
-                
-            }
-            
+        rootviewcontroller.rootViewController = frontBarController
+        rootviewcontroller.backgroundColor = .white
+        UIView.transition(with: rootviewcontroller, duration: 0.55001, options: transition, animations: { () -> Void in
+        }) { (finished) -> Void in
             
         }
         
         
+    }
+    
+    
+    
+    func showDropDownMenu(button : UIButton  , width : CGFloat) -> DropDown{
+        let dropDown = DropDown()
+        dropDown.anchorView = button // UIView or UIBarButtonItem
+        dropDown.textFont = Constants.appFont14Regular
         
-        func showDropDownMenu(button : UIButton  , width : CGFloat) -> DropDown{
-            let dropDown = DropDown()
-            dropDown.anchorView = button // UIView or UIBarButtonItem
-            dropDown.textFont = Constants.appFont14Regular
+        dropDown.width = width > button.frame.width ? width : button.frame.width
+        dropDown.backgroundColor = UIColor.white
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        
+        return dropDown
+    }
+    
+    
+    
+    
+    func checkMaxLength(textField: UITextField!, maxLength: Int) -> Bool {
+        if (textField.text!.count > maxLength) {
             
-            dropDown.width = width > button.frame.width ? width : button.frame.width
-            dropDown.backgroundColor = UIColor.white
-            dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
-            
-            return dropDown
+            return false
         }
-        
-        
-        
-        
-        func checkMaxLength(textField: UITextField!, maxLength: Int) -> Bool {
-            if (textField.text!.count > maxLength) {
-                
-                return false
-            }
-            return true
+        return true
+    }
+    
+    func routeReports(){
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = (mainStoryboard.instantiateViewController(withIdentifier: "ReportsVC") as? ReportsVC)!
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func routeServiceClients(){
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = (mainStoryboard.instantiateViewController(withIdentifier: "ServicesClientsVC") as? ServicesClientsVC)!
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

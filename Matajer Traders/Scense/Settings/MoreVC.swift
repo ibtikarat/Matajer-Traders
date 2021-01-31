@@ -38,11 +38,11 @@ class MoreVC: UIViewController , WKNavigationDelegate,SFSafariViewControllerDele
         }else {
             appleView.isHidden = true
         }
-        if MatajerUtility.loadUser()?.storeData?.is_partners_services_enabled == 1 {
-            clientsServicesView.isHidden = false
-        }else {
-            clientsServicesView.isHidden = true
-        }
+//        if MatajerUtility.loadUser()?.storeData?.is_partners_services_enabled == 1 {
+//            clientsServicesView.isHidden = false
+//        }else {
+//            clientsServicesView.isHidden = true
+//        }
         if MatajerUtility.loadUser()?.storeData?.googlePlay?.count  ?? 0 > 1 {
             androidView.isHidden = false
         }else {
@@ -203,4 +203,12 @@ class MoreVC: UIViewController , WKNavigationDelegate,SFSafariViewControllerDele
         }
     }
     
+    @IBAction func goToServiceClinetsAction(_ sender: Any) {
+//        if MatajerUtility.loadUser()?.storeData?.is_partners_services_enabled ?? 0 == 1
+//        {
+            routeServiceClients()
+//        }else {
+//            self.routePopUp()
+//        }
+    }
 }

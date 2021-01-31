@@ -91,5 +91,15 @@ var localized: String {
                       
                       UIApplication.shared.open(whatsAppUrl, options: [:], completionHandler: nil)
            }
+    
+    func ValidateMobileNumber(maxLenght:Int) -> Bool {
+
+        let formatePre = "^[0-9]{\(maxLenght)}$"
+    
+        let valid = NSPredicate(format: "SELF MATCHES %@", formatePre).evaluate(with: self)
+        print(valid)
+              return valid
+      
+    }
 
 }

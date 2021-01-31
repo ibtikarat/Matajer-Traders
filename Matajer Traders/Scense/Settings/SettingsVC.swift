@@ -156,6 +156,7 @@ class SettingsVC: UIViewController , WKNavigationDelegate, QLPreviewControllerDa
                     currentURL.contains("alrajhibank") ||
                     currentURL.contains("name.com") ||
                     currentURL.contains("freelance") ||
+                    currentURL.contains("businesses.tap.company") ||
                     currentURL.contains("register"  )) {
                 if let url = URL(string: "\(currentURL)"),
                     UIApplication.shared.canOpenURL(url)

@@ -34,6 +34,7 @@ target 'Matajer Traders' do
   pod 'ImageSlideshow/SDWebImage'
   pod 'DropDown'
   pod 'SDWebImage', '~> 5.0'
+  pod 'SKCountryPicker' 
   
   
 end

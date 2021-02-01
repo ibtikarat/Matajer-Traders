@@ -52,8 +52,12 @@ class RegisterVC: UIViewController {
         nameTF.text = name ?? ""
         passwordTF.text = password ?? ""
         mobileTF.text = mobile ?? ""
+        
         self.country = AppDelegate.shared.countries?.first(where: {$0.prefix == 966})
-        updateCountryInfo()
+        row_imgV.image = Constants.row_down
+        country_id = country?.id ?? 0
+        mobile_maxLenghth = country?.realMobile ?? 0
+        codeNoLbl.text = "+\(country?.prefix ?? 0)"
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -83,22 +87,15 @@ class RegisterVC: UIViewController {
         countryController.detailFont = Constants.appFont14Regular
         
        
-        countryController.flagStyle = .circular
+        countryController.flagStyle = .corner
         countryController.isCountryFlagHidden = false
         countryController.isCountryDialHidden = false
-        countryController.favoriteCountriesLocaleIdentifiers = ["SA", "KW"]
+        countryController.favoriteCountriesLocaleIdentifiers = (AppDelegate.shared.countries?.map({$0.code ?? ""}) ?? ["SA","KW"]) as [String]
+      
      
     }
     
-    
-    func updateCountryInfo(){
-        row_imgV.image = Constants.row_down
-        country_id = country?.id ?? 0
-        mobile_maxLenghth = country?.realMobile ?? 0
-        imgCountryImgV.fetchingImage(url: country?.img ?? "")
-        codeNoLbl.text = "+\(country?.prefix ?? 0)"
-    }
-    
+ 
 
     @IBAction func registerAction(_ sender: Any)
     {
@@ -239,7 +236,7 @@ extension RegisterVC : UITextFieldDelegate {
             mobileView.borderColor = .clear
             mobileView.borderWidth = 0
             mobile =  "\(self.country?.prefix ?? 966)\(mobileTF.text ?? "")"
-            if mobileTF.text!.ValidateMobileNumber() {
+            if mobileTF.text!.ValidateMobileNumber(maxLenght: mobile_maxLenghth) {
                 checkEmailMobile(value: mobile ?? "")
             }
         case nameTF:
@@ -269,7 +266,7 @@ extension RegisterVC : UITextFieldDelegate {
             mobileView.borderColor = .clear
             mobileView.borderWidth = 0
             mobile =  mobileTF.text
-            if mobileTF.text!.ValidateMobileNumber() {
+            if mobileTF.text!.ValidateMobileNumber(maxLenght: mobile_maxLenghth) {
                 checkEmailMobile(value: mobile ?? "")
             }
         case nameTF:
@@ -294,7 +291,7 @@ extension RegisterVC : UITextFieldDelegate {
                     return true
                 }
             }
-            return  checkMaxLength(textField: mobileTF, maxLength: 9)
+            return  checkMaxLength(textField: mobileTF, maxLength: mobile_maxLenghth-1)
             
       
         default:
@@ -311,22 +308,26 @@ extension RegisterVC : UITextFieldDelegate {
         
         var params = [String:String]()
         params["txt"] = value
+        params["country_id"] = self.country?.id?.description
         API.CHECK_MOBILE_EMAIL.startRequest(showIndicator: false, params: params) { (Api,response) in
             if response.isSuccess {
+            print(response)
+                
                 if value.isEmailValid {
                     
                     self.valid_email = true
-                } else if value.ValidateMobileNumber() {
+                } else if value.ValidateMobileNumber(maxLenght: self.mobile_maxLenghth){
                     
                     self.valid_mobile = true
                 }
                 
             }else{
+                self.showBunnerAlert(title: "", message:response.errorMessege)
                 if value.isEmailValid {
-                    self.showBunnerAlert(title: "", message:"البريد الإلكتروني مسجل مسبقاً")
+                   
                     self.valid_email = false
-                } else if value.ValidateMobileNumber() {
-                    self.showBunnerAlert(title: "", message: "رقم الجوال مسجل مسبقاً")
+                } else if value.ValidateMobileNumber(maxLenght: self.mobile_maxLenghth) {
+                
                     self.valid_mobile = false
                 }
                 

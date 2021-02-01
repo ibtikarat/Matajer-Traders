@@ -62,15 +62,13 @@ class MoreVC: UIViewController , WKNavigationDelegate,SFSafariViewControllerDele
             noti_count_lbl.isHidden = true
         }
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUserInfo"), object: nil, queue: nil) { (notification) in
-            self.updateUserData { (result) in
-                if result {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUser"), object: nil, queue: nil) { (notification) in
+          
                     self.userImgV.fetchingImage(url:  MatajerUtility.loadUser()?.storeData?.logo ?? "")
                     self.userName.setTitle(MatajerUtility.loadUser()?.storeData?.nameAr ?? "", for: .normal)
-                }
+              
             }
-            
-        }
+     
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateNotificationNumber"), object: nil, queue: nil) { (notification) in
             if (notification.userInfo as? [String: Any]) != nil

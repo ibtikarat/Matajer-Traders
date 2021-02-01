@@ -110,7 +110,11 @@ open class CountryPickerController: UIViewController {
         searchController.searchBar.barStyle = .default
         searchController.searchBar.sizeToFit()
         searchController.searchBar.delegate = self
-        
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
+        if #available(iOS 13.0, *) {
+            searchController.searchBar.searchTextField.font =  UIFont(name: "DINNextLTArabic-Regular", size: 14)!
+        }
         
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController

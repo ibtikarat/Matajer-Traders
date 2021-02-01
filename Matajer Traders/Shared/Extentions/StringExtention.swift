@@ -97,6 +97,7 @@ var localized: String {
         let formatePre = "^[0-9]{\(maxLenght)}$"
     
         let valid = NSPredicate(format: "SELF MATCHES %@", formatePre).evaluate(with: self)
+        print(maxLenght)
         print(valid)
               return valid
       

@@ -69,10 +69,26 @@ class MainTabBar:  UITabBarController, UITabBarControllerDelegate{
              }
          }
         
-        
-        
-    }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUserInfo"), object: nil, queue: nil) { (notification) in
+            self.updateUserData ()
+            }
+            
+        }
+
     
+    func updateUserData()
+    {
+        API.GET_USER.startRequest(showIndicator: false) { (api, response) in
+            if response.isSuccess {
+                let value = response.data as! [String :Any]
+                let userData = try! JSONSerialization.data(withJSONObject: value, options: [])
+                let user = try! JSONDecoder().decode(User.self, from: userData)
+                MatajerUtility.saveUser(user: user)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUser"), object: self, userInfo: nil)
+                
+            }
+        }
+    }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         let selectedIndex = self.selectedIndex
         if selectedIndex == currentIndexSelected {

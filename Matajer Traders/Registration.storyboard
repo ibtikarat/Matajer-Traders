@@ -554,11 +554,11 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterVC" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4rB-Fe-fMS" customClass="RegisterVC" customModule="Matajer_Trader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bu0-bI-fhk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSu-RJ-cpx">
-                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9T-St-Blg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="707"/>
@@ -576,7 +576,7 @@
                                                 <rect key="frame" x="24" y="160" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="الاسم كاملاً" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ul3-dJ-ZBY" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -608,7 +608,7 @@
                                                 <rect key="frame" x="24" y="232" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-eC-qcg" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -623,7 +623,7 @@
                                                         </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-gn-WTS">
-                                                        <rect key="frame" x="272.5" y="16" width="73.5" height="24"/>
+                                                        <rect key="frame" x="261.5" y="16" width="84.5" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5C-gu-HfP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="33.5" height="24"/>
@@ -631,25 +631,25 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dta-Pz-cBa" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                                <rect key="frame" x="37.5" y="0.0" width="24" height="24"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sa" translatesAutoresizingMaskIntoConstraints="NO" id="dta-Pz-cBa" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                                <rect key="frame" x="37.5" y="0.0" width="35" height="24"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="24" id="IAs-8b-2u8"/>
+                                                                    <constraint firstAttribute="width" constant="35" id="IAs-8b-2u8"/>
                                                                     <constraint firstAttribute="height" constant="24" id="ThC-99-kIF"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="12"/>
+                                                                        <real key="value" value="5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="row_down" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-qc-OnA">
-                                                                <rect key="frame" x="65.5" y="0.0" width="8" height="24"/>
+                                                                <rect key="frame" x="76.5" y="0.0" width="8" height="24"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-Jg-19P">
-                                                        <rect key="frame" x="272.5" y="16" width="73.5" height="24"/>
+                                                        <rect key="frame" x="261.5" y="16" width="84.5" height="24"/>
                                                         <connections>
                                                             <action selector="selectCountryAction:" destination="4rB-Fe-fMS" eventType="touchUpInside" id="exq-77-fXO"/>
                                                         </connections>
@@ -678,7 +678,7 @@
                                                 <rect key="frame" x="24" y="304" width="366" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-CF-hFk" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                        <rect key="frame" x="24.5" y="16" width="291.5" height="24"/>
+                                                        <rect key="frame" x="24.5" y="15.5" width="291.5" height="25.5"/>
                                                         <color key="tintColor" name="black_color"/>
                                                         <color key="textColor" name="black_color"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
@@ -849,7 +849,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cx-Av-I01">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-dn-tno">
                                         <rect key="frame" x="16" y="16" width="38" height="38"/>
@@ -885,6 +885,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="c7W-0S-aeF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="codeNoLbl" destination="I5C-gu-HfP" id="eMu-P0-mjq"/>
                         <outlet property="emailTF" destination="eLa-CF-hFk" id="rQR-Ds-TaS"/>
@@ -1814,7 +1815,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإعدادات" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-5W-ay4">
-                                        <rect key="frame" x="180.5" y="63" width="53.5" height="19"/>
+                                        <rect key="frame" x="177.5" y="60.5" width="59" height="24"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -1878,7 +1879,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سياسة الخصوصية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lm-FA-L5F">
-                                        <rect key="frame" x="151" y="62.5" width="112.5" height="20"/>
+                                        <rect key="frame" x="150" y="60" width="114.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="17"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -1945,7 +1946,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط و الأحكام" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-y6-bx9">
-                                        <rect key="frame" x="158.5" y="63" width="97.5" height="19"/>
+                                        <rect key="frame" x="154.5" y="60.5" width="105.5" height="24"/>
                                         <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="16"/>
                                         <color key="textColor" name="black_color"/>
                                         <nil key="highlightedColor"/>
@@ -2037,6 +2038,9 @@
         <designable name="cI5-eC-qcg">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
+        <designable name="dta-Pz-cBa">
+            <size key="intrinsicContentSize" width="400" height="267"/>
+        </designable>
         <designable name="eLa-CF-hFk">
             <size key="intrinsicContentSize" width="95" height="25.5"/>
         </designable>
@@ -2068,6 +2072,7 @@
         <image name="ic_register" width="262" height="60"/>
         <image name="ic_register_complete" width="272" height="62"/>
         <image name="ic_reset" width="73" height="73"/>
+        <image name="ic_sa" width="400" height="267"/>
         <image name="img_no_internet" width="353" height="289"/>
         <image name="nav_back_btn" width="38" height="38"/>
         <image name="row-left" width="9" height="14"/>

@@ -19,6 +19,7 @@ class CountryApp: NSObject,Codable {
     let name : String?
     let prefix : Int?
     let realMobile : Int?
+    let code : String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -27,6 +28,7 @@ class CountryApp: NSObject,Codable {
         case name = "name"
         case prefix = "prefix"
         case realMobile = "real_mobile"
+        case code = "code"
     }
     
     

@@ -55,16 +55,12 @@ class HomeVC: UIViewController, WKNavigationDelegate ,QLPreviewControllerDataSou
         webView.navigationDelegate = self
         loadPage()
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUserInfo"), object: nil, queue: nil) { (notification) in
-            self.updateUserData { (result) in
-                if result {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUser"), object: nil, queue: nil) { (notification) in
+
                     self.userImgV.fetchingImage(url:  MatajerUtility.loadUser()?.storeData?.logo ?? "")
-                }
             }
             
-        }
-        
-        
+      
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateNotificationNumber"), object: nil, queue: nil) { (notification) in
             if (notification.userInfo as? [String: Any]) != nil
             {

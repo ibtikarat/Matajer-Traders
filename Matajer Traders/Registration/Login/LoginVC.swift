@@ -147,11 +147,7 @@ class LoginVC: UIViewController  {
             return .invalid("حقل الإيميل / رقم الجوال مطلوب")
         }
         let num = Int(mobileEmailTF.text ?? "")
-        if num != nil {
-            if !(mobileEmailTF.text?.ValidateMobileNumber() ?? false) {
-                return .invalid("مطلوب 10أرقام رقم الجوال ********05")
-            }
-        }else {
+        if num == nil {
             if !mobileEmailTF.text!.isEmailValid {
                 return .invalid("يجب إدخال البريد بشكل صحيح".localized)
             }
@@ -218,23 +214,23 @@ extension LoginVC : UITextFieldDelegate {
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        switch textField {
-        
-        case mobileEmailTF:
-            let num = Int(mobileEmailTF.text ?? "")
-            if num != nil {
-                if let char = string.cString(using: String.Encoding.utf8) {
-                    let isBackSpace = strcmp(char, "\\b")
-                    if (isBackSpace == -92) {
-                        return true
-                    }
-                }
-                return   checkMaxLength(textField: mobileEmailTF, maxLength: 9)
-            }
-            
-        default:
-            return true
-        }
+//        switch textField {
+//        
+//        case mobileEmailTF:
+//            let num = Int(mobileEmailTF.text ?? "")
+//            if num != nil {
+//                if let char = string.cString(using: String.Encoding.utf8) {
+//                    let isBackSpace = strcmp(char, "\\b")
+//                    if (isBackSpace == -92) {
+//                        return true
+//                    }
+//                }
+//                return   checkMaxLength(textField: mobileEmailTF, maxLength: 9)
+//            }
+//            
+//        default:
+//            return true
+//        }
         
         return true
     }

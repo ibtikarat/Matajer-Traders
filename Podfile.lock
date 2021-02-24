@@ -2,117 +2,115 @@ PODS:
   - Alamofire (5.0.5)
   - DropDown (2.3.13)
   - DynamicBlurView (4.1.0)
-  - Firebase/Analytics (6.32.0):
+  - Firebase/Analytics (7.7.0):
     - Firebase/Core
-  - Firebase/Core (6.32.0):
+  - Firebase/Core (7.7.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.8.1)
-  - Firebase/CoreOnly (6.32.0):
-    - FirebaseCore (= 6.10.2)
-  - Firebase/Crashlytics (6.32.0):
+    - FirebaseAnalytics (= 7.7.0)
+  - Firebase/CoreOnly (7.7.0):
+    - FirebaseCore (= 7.7.0)
+  - Firebase/Crashlytics (7.7.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 4.6.0)
-  - Firebase/Messaging (6.32.0):
+    - FirebaseCrashlytics (~> 7.7.0)
+  - Firebase/Messaging (7.7.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 4.6.2)
-  - FirebaseAnalytics (6.8.1):
-    - FirebaseCore (~> 6.10)
-    - FirebaseInstallations (~> 1.6)
-    - GoogleAppMeasurement (= 6.8.1)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/MethodSwizzler (~> 6.7)
-    - GoogleUtilities/Network (~> 6.7)
-    - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30906.0)
-  - FirebaseCore (6.10.2):
-    - FirebaseCoreDiagnostics (~> 1.6)
-    - GoogleUtilities/Environment (~> 6.7)
-    - GoogleUtilities/Logger (~> 6.7)
-  - FirebaseCoreDiagnostics (1.6.0):
-    - GoogleDataTransport (~> 7.2)
-    - GoogleUtilities/Environment (~> 6.7)
-    - GoogleUtilities/Logger (~> 6.7)
-    - nanopb (~> 1.30906.0)
-  - FirebaseCrashlytics (4.6.0):
-    - FirebaseCore (~> 6.10)
-    - FirebaseInstallations (~> 1.6)
-    - GoogleDataTransport (~> 7.2)
-    - nanopb (~> 1.30906.0)
+    - FirebaseMessaging (~> 7.7.0)
+  - FirebaseAnalytics (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleAppMeasurement (= 7.7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/MethodSwizzler (~> 7.0)
+    - GoogleUtilities/Network (~> 7.0)
+    - "GoogleUtilities/NSData+zlib (~> 7.0)"
+    - nanopb (~> 2.30907.0)
+  - FirebaseCore (7.7.0):
+    - FirebaseCoreDiagnostics (~> 7.4)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Logger (~> 7.0)
+  - FirebaseCoreDiagnostics (7.7.0):
+    - GoogleDataTransport (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Logger (~> 7.0)
+    - nanopb (~> 2.30907.0)
+  - FirebaseCrashlytics (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleDataTransport (~> 8.0)
+    - nanopb (~> 2.30907.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (1.7.0):
-    - FirebaseCore (~> 6.10)
-    - GoogleUtilities/Environment (~> 6.7)
-    - GoogleUtilities/UserDefaults (~> 6.7)
+  - FirebaseInstallations (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstanceID (4.6.0):
-    - FirebaseCore (~> 6.10)
-    - FirebaseInstallations (~> 1.6)
-    - GoogleUtilities/Environment (~> 6.7)
-    - GoogleUtilities/UserDefaults (~> 6.7)
-  - FirebaseMessaging (4.6.2):
-    - FirebaseCore (~> 6.10)
-    - FirebaseInstanceID (~> 4.6)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/Environment (~> 6.7)
-    - GoogleUtilities/Reachability (~> 6.7)
-    - GoogleUtilities/UserDefaults (~> 6.7)
-    - Protobuf (>= 3.9.2, ~> 3.9)
-  - GoogleAppMeasurement (6.8.1):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
-    - GoogleUtilities/MethodSwizzler (~> 6.7)
-    - GoogleUtilities/Network (~> 6.7)
-    - "GoogleUtilities/NSData+zlib (~> 6.7)"
-    - nanopb (~> 1.30906.0)
-  - GoogleDataTransport (7.3.0):
-    - nanopb (~> 1.30906.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
+  - FirebaseInstanceID (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseMessaging (7.7.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstanceID (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Reachability (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - GoogleAppMeasurement (7.7.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/MethodSwizzler (~> 7.0)
+    - GoogleUtilities/Network (~> 7.0)
+    - "GoogleUtilities/NSData+zlib (~> 7.0)"
+    - nanopb (~> 2.30907.0)
+  - GoogleDataTransport (8.2.0):
+    - nanopb (~> 2.30907.0)
+  - GoogleUtilities/AppDelegateSwizzler (7.2.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.7.2):
+  - GoogleUtilities/Environment (7.2.2):
     - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.7.2):
+  - GoogleUtilities/Logger (7.2.2):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.7.2):
+  - GoogleUtilities/MethodSwizzler (7.2.2):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.7.2):
+  - GoogleUtilities/Network (7.2.2):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.7.2)"
-  - GoogleUtilities/Reachability (6.7.2):
+  - "GoogleUtilities/NSData+zlib (7.2.2)"
+  - GoogleUtilities/Reachability (7.2.2):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.7.2):
+  - GoogleUtilities/UserDefaults (7.2.2):
     - GoogleUtilities/Logger
   - IBAnimatable (6.1.0)
-  - ImageSlideshow (1.9.1):
-    - ImageSlideshow/Core (= 1.9.1)
-  - ImageSlideshow/Core (1.9.1)
-  - ImageSlideshow/SDWebImage (1.9.1):
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/SDWebImage (1.9.2):
     - ImageSlideshow/Core
     - SDWebImage (>= 3.7)
   - IQKeyboardManagerSwift (6.5.6)
-  - MOLH (1.4.1)
-  - nanopb (1.30906.0):
-    - nanopb/decode (= 1.30906.0)
-    - nanopb/encode (= 1.30906.0)
-  - nanopb/decode (1.30906.0)
-  - nanopb/encode (1.30906.0)
+  - MOLH (1.4.3)
+  - nanopb (2.30907.0):
+    - nanopb/decode (= 2.30907.0)
+    - nanopb/encode (= 2.30907.0)
+  - nanopb/decode (2.30907.0)
+  - nanopb/encode (2.30907.0)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
-  - PromisesObjC (1.2.10)
-  - Protobuf (3.13.0)
-  - SDWebImage (5.9.1):
-    - SDWebImage/Core (= 5.9.1)
-  - SDWebImage/Core (5.9.1)
-  - Sentry (6.0.3):
-    - Sentry/Core (= 6.0.3)
-  - Sentry/Core (6.0.3)
-  - SkeletonView (1.9)
+  - PromisesObjC (1.2.12)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+  - Sentry (6.2.0):
+    - Sentry/Core (= 6.2.0)
+  - Sentry/Core (6.2.0)
+  - SkeletonView (1.13.0)
   - SVProgressHUD (2.2.5)
-  - SwiftMessages (8.0.2):
-    - SwiftMessages/App (= 8.0.2)
-  - SwiftMessages/App (8.0.2)
+  - SwiftMessages (9.0.0):
+    - SwiftMessages/App (= 9.0.0)
+  - SwiftMessages/App (9.0.0)
   - SwiftyJSON (4.0.0)
   - "UITextView+Placeholder (1.4.0)"
 
@@ -160,7 +158,6 @@ SPEC REPOS:
     - nanopb
     - PopupDialog
     - PromisesObjC
-    - Protobuf
     - SDWebImage
     - Sentry
     - SkeletonView
@@ -173,33 +170,32 @@ SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
-  Firebase: afa030f17f5421810f379a42b0e5d3302d27eb26
-  FirebaseAnalytics: a4d98464f455f5056063932123fa441025322f30
-  FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
-  FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
-  FirebaseCrashlytics: eea40d2a33f01b927b9f6f00ef305baa22a6a58e
-  FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
-  FirebaseInstanceID: 84f5f5762f1bee94ca2254f693bbf5aec6666504
-  FirebaseMessaging: 82d75b3770a78bbce470769a6980429608b4c407
-  GoogleAppMeasurement: e3618c6e9f5166a6b320b03b759da3b04ec2a101
-  GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
-  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  Firebase: cd2ab85eec8170dc260186159f21072ecb679ad5
+  FirebaseAnalytics: f3f8f75de34fe04141a69bb1c4bd7e24a80178e1
+  FirebaseCore: ac35d680a0bf32319a59966a1478e0741536b97b
+  FirebaseCoreDiagnostics: 179bf3831213451c8addd036aca7fcf5492ec154
+  FirebaseCrashlytics: 47af228115805e190b566db12c028263531b8ce0
+  FirebaseInstallations: 42c86e7b02ff75b7f27f85833bf5dcb5f38a9774
+  FirebaseInstanceID: cf940324a20ac14a27ad1e931d15ac9d335526db
+  FirebaseMessaging: ce33c2537fdda1d1a4bc82b2245e3c3bf9107684
+  GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
+  GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
+  GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   IBAnimatable: 99dddd4c0625884a301ba3ecbc1615f8a390368e
-  ImageSlideshow: 67184be896a28472bd3b906c33ce4e0734aa3d22
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  MOLH: 9ea6c0390f5963b2df9827ae64035fbc8598b092
-  nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
-  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
-  Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
-  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
-  Sentry: 286e33636e0be9b559e2ebe2eae63ec53f83816e
-  SkeletonView: f72ac4df69730e48324efae062ba580c2fce974d
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  Sentry: 972bd51ddb2aa3430f2c81fadb975fe27f47c2f4
+  SkeletonView: 2b14cb767a7da384d17d5d7e1db0d55a6cf9566a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+  SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
 PODFILE CHECKSUM: d176812a037d2f4adffd45686c920cb7f1a3f72c
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

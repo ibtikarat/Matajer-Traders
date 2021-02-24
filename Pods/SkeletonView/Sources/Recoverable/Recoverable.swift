@@ -24,14 +24,15 @@ extension UIView: Recoverable {
     }
     
     @objc func recoverViewState(forced: Bool) {
-        guard let safeViewState = viewState else { return }
+        guard let storedViewState = viewState else { return }
         
         startTransition { [weak self] in
-            self?.layer.cornerRadius = safeViewState.cornerRadius
-            self?.layer.masksToBounds = safeViewState.clipToBounds
+            self?.layer.cornerRadius = storedViewState.cornerRadius
+            self?.layer.masksToBounds = storedViewState.clipToBounds
+            self?.isUserInteractionEnabled = storedViewState.isUserInteractionsEnabled
             
-            if safeViewState.backgroundColor != self?.backgroundColor || forced {
-                self?.backgroundColor = safeViewState.backgroundColor
+            if self?.backgroundColor == .clear || forced {
+                self?.backgroundColor = storedViewState.backgroundColor
             }
         }
     }
@@ -51,9 +52,13 @@ extension UILabel {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
-            self?.textColor = self?.labelState?.textColor
-            self?.text = self?.labelState?.text
-            self?.isUserInteractionEnabled = self?.labelState?.isUserInteractionsEnabled ?? false
+            guard let storedLabelState = self?.labelState else { return }
+            
+            self?.restoreBackupHeightConstraints()
+            
+            if self?.textColor == .clear || forced {
+                self?.textColor = storedLabelState.textColor
+            }
         }
     }
 }
@@ -72,9 +77,38 @@ extension UITextView {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
-            self?.textColor = self?.textState?.textColor
-            self?.text = self?.textState?.text
-            self?.isUserInteractionEnabled = self?.textState?.isUserInteractionsEnabled ?? false
+            guard let storedLabelState = self?.textState else { return }
+            
+            if self?.textColor == .clear || forced {
+                self?.textColor = storedLabelState.textColor
+            }
+        }
+    }
+}
+
+extension UITextField {
+    var textState: RecoverableTextFieldState? {
+        get { return ao_get(pkey: &ViewAssociatedKeys.labelViewState) as? RecoverableTextFieldState }
+        set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.labelViewState) }
+    }
+
+    override func saveViewState() {
+        super.saveViewState()
+        textState = RecoverableTextFieldState(view: self)
+    }
+
+    override func recoverViewState(forced: Bool) {
+        super.recoverViewState(forced: forced)
+        startTransition { [weak self] in
+            guard let storedLabelState = self?.textState else { return }
+
+            if self?.textColor == .clear || forced {
+                self?.textColor = storedLabelState.textColor
+            }
+
+            if self?.placeholder == nil || forced {
+                self?.placeholder = storedLabelState.placeholder
+            }
         }
     }
 }
@@ -112,8 +146,9 @@ extension UIButton {
     override func recoverViewState(forced: Bool) {
         super.recoverViewState(forced: forced)
         startTransition { [weak self] in
-            self?.setTitle(self?.buttonState?.title, for: .normal)
-            self?.isUserInteractionEnabled = self?.buttonState?.isUserInteractionsEnabled ?? false
+            if self?.title(for: .normal) == nil {
+                self?.setTitle(self?.buttonState?.title, for: .normal)
+            }
         }
     }
 }

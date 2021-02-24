@@ -15,8 +15,7 @@ import Sentry
 
 
 @UIApplicationMain
-class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate
-, MessagingDelegate {
+class AppDelegate:  UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -234,14 +233,14 @@ extension AppDelegate : MOLHResetable{
     
 }
 
-extension AppDelegate {
+extension AppDelegate: MessagingDelegate {
     
     
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase registration token: \(fcmToken ?? "")")
         
-        MatajerUtility.saveFcmToken(fcmToken: fcmToken)
+        MatajerUtility.saveFcmToken(fcmToken: fcmToken ?? "")
         if  MatajerUtility.isLogin()
         {
             Messaging.messaging().subscribe(toTopic: API.FIREBASE_SUBSCRIBE_iosArTopic)

@@ -104,13 +104,13 @@ extension UITextField  {
             
             if UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft {
 
-            guard let image :UIImageView = (self.rightView! as! UIImageView) else{
+            guard let image :UIImageView = (self.rightView! as? UIImageView) else{
                 return nil
             }
                 return image.image
             }else{
                 
-                guard let image :UIImageView = (self.leftView! as! UIImageView) else{
+                guard let image :UIImageView = (self.leftView! as? UIImageView) else{
                     return nil
                 }
                 
@@ -138,13 +138,13 @@ extension UITextField  {
             
             if UIApplication.shared.userInterfaceLayoutDirection == .leftToRight {
                 
-                guard let image :UIImageView = (self.rightView! as! UIImageView) else{
+                guard let image :UIImageView = (self.rightView! as? UIImageView) else{
                     return nil
                 }
                 return image.image
             }else{
                 
-                guard let image :UIImageView = (self.leftView! as! UIImageView) else{
+                guard let image :UIImageView = (self.leftView! as? UIImageView) else{
                     return nil
                 }
                 
